@@ -1,0 +1,634 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbPayrollModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_account_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_attendance">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="emp_id" Type="bigint" />
+    <Property Name="date" Type="datetime" />
+    <Property Name="timein" Type="datetime" />
+    <Property Name="timeout" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_company">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="300" />
+    <Property Name="address" Type="varchar" MaxLength="50" />
+    <Property Name="is_active" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_department">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="company" Type="bigint" />
+    <Property Name="name" Type="varchar" MaxLength="300" />
+    <Property Name="is_active" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_dtr">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="emp_id" Type="bigint" />
+    <Property Name="date" Type="datetime" />
+    <Property Name="year" Type="varchar" MaxLength="50" />
+    <Property Name="check_in" Type="datetime" />
+    <Property Name="check_out" Type="datetime" />
+    <Property Name="total_duty_hours" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="lates" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="undertime" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="total_overtime" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ot_start" Type="datetime" />
+    <Property Name="ot_end" Type="datetime" />
+    <Property Name="ot_status" Type="varchar" MaxLength="50" />
+    <Property Name="holiday_work_hours" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="holiday_work_status" Type="varchar" MaxLength="50" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+    <Property Name="isHoliday" Type="bit" />
+    <Property Name="isRD" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_employee">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="firstname" Type="varchar" MaxLength="300" />
+    <Property Name="middlename" Type="varchar" MaxLength="300" />
+    <Property Name="lastname" Type="varchar" MaxLength="300" />
+    <Property Name="department" Type="bigint" />
+    <Property Name="company" Type="bigint" />
+    <Property Name="job_id" Type="bigint" />
+    <Property Name="schedule" Type="bigint" />
+    <Property Name="address" Type="varchar(max)" />
+    <Property Name="birthdate" Type="datetime" />
+    <Property Name="civil_status" Type="varchar" MaxLength="50" />
+    <Property Name="gender" Type="varchar" MaxLength="50" />
+    <Property Name="usertype" Type="varchar" MaxLength="50" />
+    <Property Name="email" Type="varchar" MaxLength="100" />
+    <Property Name="is_active" Type="bit" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_employee_account">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="emp_id" Type="bigint" />
+    <Property Name="usertype" Type="varchar" MaxLength="50" />
+    <Property Name="username" Type="varchar" MaxLength="200" />
+    <Property Name="password" Type="varchar(max)" />
+    <Property Name="question" Type="varchar(max)" />
+    <Property Name="answer" Type="varchar(max)" />
+    <Property Name="is_active" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_employee_government">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="emp_id" Type="bigint" />
+    <Property Name="has_sss" Type="bit" />
+    <Property Name="sss_number" Type="varchar" MaxLength="100" />
+    <Property Name="has_philhealth" Type="bit" />
+    <Property Name="philhealth_number" Type="varchar" MaxLength="100" />
+    <Property Name="has_pagibig" Type="bit" />
+    <Property Name="pagibig_number" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbl_employee_rate">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="emp_id" Type="bigint" />
+    <Property Name="rate" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="is_active" Type="bit" />
+    <Property Name="effective_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_employee_timesheet">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="emp_id" Type="bigint" />
+    <Property Name="date_from" Type="datetime" />
+    <Property Name="date_to" Type="datetime" />
+    <Property Name="working_days" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="holidays" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="days_absent" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="duty_hours" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="lates" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="undertime" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="overtime" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="preparedby" Type="bigint" />
+    <Property Name="prepared_date" Type="datetime" />
+    <Property Name="approvedby" Type="bigint" />
+    <Property Name="approved_date" Type="datetime" />
+    <Property Name="cancelledby" Type="bigint" />
+    <Property Name="cancelled_date" Type="datetime" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_holiday">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="holiday_name" Type="varchar" MaxLength="300" />
+    <Property Name="date" Type="datetime" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="is_active" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_jobs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="company" Type="bigint" />
+    <Property Name="department" Type="bigint" />
+    <Property Name="name" Type="varchar" MaxLength="300" />
+    <Property Name="is_active" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_loan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="emp_id" Type="bigint" />
+    <Property Name="amount" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="effective_date" Type="datetime" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+    <Property Name="preparedby" Type="bigint" />
+    <Property Name="dateprepared" Type="datetime" />
+    <Property Name="releasedby" Type="bigint" />
+    <Property Name="datereleased" Type="datetime" />
+    <Property Name="voidby" Type="bigint" />
+    <Property Name="datevoid" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_payslip">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="timesheet_id" Type="bigint" />
+    <Property Name="emp_id" Type="bigint" />
+    <Property Name="monthly_rate" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="semi_monthly_rate" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="preparedby" Type="bigint" />
+    <Property Name="dateprepared" Type="datetime" />
+    <Property Name="approvedby" Type="bigint" />
+    <Property Name="dateapproved" Type="datetime" />
+    <Property Name="cancelledby" Type="bigint" />
+    <Property Name="datecancelled" Type="datetime" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+    <Property Name="remarks" Type="varchar(max)" />
+    <Property Name="datefrom" Type="date" />
+    <Property Name="dateto" Type="date" />
+  </EntityType>
+  <EntityType Name="tbl_payslip_additionals">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="payslip_id" Type="bigint" />
+    <Property Name="name" Type="varchar" MaxLength="120" />
+    <Property Name="amount" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="dateadded" Type="date" />
+    <Property Name="addedby" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tbl_payslip_adjustment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="payslip_id" Type="bigint" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+    <Property Name="amount" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="adjustment" Type="varchar" MaxLength="300" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_payslip_deductions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="payslip_id" Type="bigint" />
+    <Property Name="name" Type="varchar" MaxLength="120" />
+    <Property Name="amount" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="is_active" Type="bit" />
+    <Property Name="dateadded" Type="date" />
+    <Property Name="addedby" Type="bigint" />
+  </EntityType>
+  <EntityType Name="tbl_payslip_detail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="payslip_id" Type="bigint" />
+    <Property Name="name" Type="varchar" MaxLength="300" />
+    <Property Name="amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="days" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="hours" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_payslip_government_dedution">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="payslip_id" Type="bigint" />
+    <Property Name="government" Type="varchar" MaxLength="50" />
+    <Property Name="amount" Type="decimal" Precision="18" Scale="4" />
+  </EntityType>
+  <EntityType Name="tbl_payslip_holiday">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="payslip_id" Type="bigint" />
+    <Property Name="holiday_id" Type="bigint" />
+    <Property Name="holiday_date" Type="date" />
+    <Property Name="amount" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="holiday_percent" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="tbl_payslip_less">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="payslip_id" Type="bigint" />
+    <Property Name="name" Type="varchar" MaxLength="150" />
+    <Property Name="amount" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="days" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="minutes" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="tbl_payslip_loan_deduction">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="payslip_id" Type="bigint" />
+    <Property Name="amount" Type="decimal" Precision="18" Scale="4" />
+  </EntityType>
+  <EntityType Name="tbl_payslip_overtime">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="payslip_id" Type="bigint" />
+    <Property Name="amount" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="ot_date" Type="date" />
+    <Property Name="ot_hours" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="tbl_schedule">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="time_in" Type="datetime" />
+    <Property Name="time_out" Type="datetime" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+    <Property Name="grace_time" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbPayroll.dbo.tbl_sss_contribution' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tbl_sss_contribution">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="start_range" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="end_range" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="monthly_salary_credit" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="social_security_er" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="social_security_ee" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="social_security_total" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ec_er" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="total_contribution_er" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="total_contribution_ee" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="grand_total_contribution" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="total_contribution" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbPayroll.dbo.view_department_list' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="view_department_list">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="bigint" Nullable="false" />
+    <Property Name="DepartmentName" Type="varchar" MaxLength="300" />
+    <Property Name="CompanyID" Type="bigint" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbPayroll.dbo.View_Employee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_Employee">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="firstname" Type="varchar" MaxLength="300" />
+    <Property Name="middlename" Type="varchar" MaxLength="300" />
+    <Property Name="lastname" Type="varchar" MaxLength="300" />
+    <Property Name="is_active" Type="bit" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+    <Property Name="company" Type="bigint" />
+    <Property Name="department" Type="bigint" />
+    <Property Name="address" Type="varchar(max)" />
+    <Property Name="birthdate" Type="datetime" />
+    <Property Name="civil_status" Type="varchar" MaxLength="50" />
+    <Property Name="gender" Type="varchar" MaxLength="50" />
+    <Property Name="usertype" Type="varchar" MaxLength="50" />
+    <Property Name="CivilStatus" Type="varchar" MaxLength="50" />
+    <Property Name="EmployeeName" Type="varchar" MaxLength="602" />
+    <Property Name="Company Name" Type="varchar" MaxLength="300" />
+    <Property Name="Department Name" Type="varchar" MaxLength="300" />
+    <Property Name="CompanyId" Type="bigint" />
+    <Property Name="DeptId" Type="bigint" />
+    <Property Name="Employee Status" Type="varchar" MaxLength="8" />
+    <Property Name="email" Type="varchar" MaxLength="100" />
+    <Property Name="schedule" Type="bigint" />
+    <Property Name="job_id" Type="bigint" />
+    <Property Name="JobName" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbPayroll.dbo.view_employee_list' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="view_employee_list">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="bigint" Nullable="false" />
+    <Property Name="EmployeeName" Type="varchar" MaxLength="601" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="300" />
+    <Property Name="DepartmentName" Type="varchar" MaxLength="300" />
+    <Property Name="Job" Type="bigint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbPayroll.dbo.view_employee_list_v2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="view_employee_list_v2">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="bigint" Nullable="false" />
+    <Property Name="EmployeeName" Type="varchar" MaxLength="601" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="300" />
+    <Property Name="DepartmentName" Type="varchar" MaxLength="300" />
+    <Property Name="Job" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbPayroll.dbo.view_employee_loan' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="view_employee_loan">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="emp_id" Type="bigint" />
+    <Property Name="amount" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="effective_date" Type="datetime" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+    <Property Name="preparedby" Type="bigint" />
+    <Property Name="dateprepared" Type="datetime" />
+    <Property Name="releasedby" Type="bigint" />
+    <Property Name="datereleased" Type="datetime" />
+    <Property Name="voidby" Type="bigint" />
+    <Property Name="datevoid" Type="datetime" />
+    <Property Name="EmployeeName" Type="varchar" MaxLength="602" />
+    <Property Name="PreparedByName" Type="varchar" MaxLength="602" />
+    <Property Name="ReleasedByName" Type="varchar" MaxLength="602" />
+    <Property Name="VoidByName" Type="varchar" MaxLength="602" />
+    <Property Name="Company" Type="varchar" MaxLength="300" />
+    <Property Name="Department" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbPayroll.dbo.view_employee_no_user_account' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="view_employee_no_user_account">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeName" Type="varchar" MaxLength="601" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbPayroll.dbo.view_employee_timesheet_list' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="view_employee_timesheet_list">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="EmpName" Type="varchar" MaxLength="601" />
+    <Property Name="company" Type="bigint" />
+    <Property Name="department" Type="bigint" />
+    <Property Name="timesheetID" Type="bigint" />
+    <Property Name="emp_id" Type="bigint" />
+    <Property Name="date_from" Type="datetime" />
+    <Property Name="date_to" Type="datetime" />
+    <Property Name="working_days" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="holidays" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="days_absent" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="duty_hours" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="lates" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="undertime" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="overtime" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="preparedby" Type="bigint" />
+    <Property Name="prepared_date" Type="datetime" />
+    <Property Name="approvedby" Type="bigint" />
+    <Property Name="approved_date" Type="datetime" />
+    <Property Name="cancelledby" Type="bigint" />
+    <Property Name="cancelled_date" Type="datetime" />
+    <Property Name="status" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbPayroll.dbo.view_job_list' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="view_job_list">
+    <Key>
+      <PropertyRef Name="JobID" />
+    </Key>
+    <Property Name="JobID" Type="bigint" Nullable="false" />
+    <Property Name="JobName" Type="varchar" MaxLength="300" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="300" />
+    <Property Name="DepartmentName" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'dbPayroll.dbo.view_user_account_list' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="view_user_account_list">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="601" />
+    <Property Name="UserName" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityContainer Name="dbPayrollModelStoreContainer">
+    <EntitySet Name="tbl_account_type" EntityType="Self.tbl_account_type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_attendance" EntityType="Self.tbl_attendance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_company" EntityType="Self.tbl_company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_department" EntityType="Self.tbl_department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_dtr" EntityType="Self.tbl_dtr" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_employee" EntityType="Self.tbl_employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_employee_account" EntityType="Self.tbl_employee_account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_employee_government" EntityType="Self.tbl_employee_government" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_employee_rate" EntityType="Self.tbl_employee_rate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_employee_timesheet" EntityType="Self.tbl_employee_timesheet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_holiday" EntityType="Self.tbl_holiday" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_jobs" EntityType="Self.tbl_jobs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_loan" EntityType="Self.tbl_loan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_payslip" EntityType="Self.tbl_payslip" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_payslip_additionals" EntityType="Self.tbl_payslip_additionals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_payslip_adjustment" EntityType="Self.tbl_payslip_adjustment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_payslip_deductions" EntityType="Self.tbl_payslip_deductions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_payslip_detail" EntityType="Self.tbl_payslip_detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_payslip_government_dedution" EntityType="Self.tbl_payslip_government_dedution" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_payslip_holiday" EntityType="Self.tbl_payslip_holiday" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_payslip_less" EntityType="Self.tbl_payslip_less" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_payslip_loan_deduction" EntityType="Self.tbl_payslip_loan_deduction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_payslip_overtime" EntityType="Self.tbl_payslip_overtime" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_schedule" EntityType="Self.tbl_schedule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_sss_contribution" EntityType="Self.tbl_sss_contribution" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tbl_sss_contribution].[id] AS [id], 
+    [tbl_sss_contribution].[start_range] AS [start_range], 
+    [tbl_sss_contribution].[end_range] AS [end_range], 
+    [tbl_sss_contribution].[monthly_salary_credit] AS [monthly_salary_credit], 
+    [tbl_sss_contribution].[social_security_er] AS [social_security_er], 
+    [tbl_sss_contribution].[social_security_ee] AS [social_security_ee], 
+    [tbl_sss_contribution].[social_security_total] AS [social_security_total], 
+    [tbl_sss_contribution].[ec_er] AS [ec_er], 
+    [tbl_sss_contribution].[total_contribution_er] AS [total_contribution_er], 
+    [tbl_sss_contribution].[total_contribution_ee] AS [total_contribution_ee], 
+    [tbl_sss_contribution].[grand_total_contribution] AS [grand_total_contribution], 
+    [tbl_sss_contribution].[total_contribution] AS [total_contribution]
+    FROM [dbo].[tbl_sss_contribution] AS [tbl_sss_contribution]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_department_list" EntityType="Self.view_department_list" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_department_list].[DepartmentID] AS [DepartmentID], 
+    [view_department_list].[DepartmentName] AS [DepartmentName], 
+    [view_department_list].[CompanyID] AS [CompanyID], 
+    [view_department_list].[CompanyName] AS [CompanyName]
+    FROM [dbo].[view_department_list] AS [view_department_list]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_Employee" EntityType="Self.View_Employee" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_Employee].[id] AS [id], 
+    [View_Employee].[firstname] AS [firstname], 
+    [View_Employee].[middlename] AS [middlename], 
+    [View_Employee].[lastname] AS [lastname], 
+    [View_Employee].[is_active] AS [is_active], 
+    [View_Employee].[status] AS [status], 
+    [View_Employee].[company] AS [company], 
+    [View_Employee].[department] AS [department], 
+    [View_Employee].[address] AS [address], 
+    [View_Employee].[birthdate] AS [birthdate], 
+    [View_Employee].[civil_status] AS [civil_status], 
+    [View_Employee].[gender] AS [gender], 
+    [View_Employee].[usertype] AS [usertype], 
+    [View_Employee].[CivilStatus] AS [CivilStatus], 
+    [View_Employee].[EmployeeName] AS [EmployeeName], 
+    [View_Employee].[Company Name] AS [Company Name], 
+    [View_Employee].[Department Name] AS [Department Name], 
+    [View_Employee].[CompanyId] AS [CompanyId], 
+    [View_Employee].[DeptId] AS [DeptId], 
+    [View_Employee].[Employee Status] AS [Employee Status], 
+    [View_Employee].[email] AS [email], 
+    [View_Employee].[schedule] AS [schedule], 
+    [View_Employee].[job_id] AS [job_id], 
+    [View_Employee].[JobName] AS [JobName]
+    FROM [dbo].[View_Employee] AS [View_Employee]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_employee_list" EntityType="Self.view_employee_list" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_employee_list].[EmployeeID] AS [EmployeeID], 
+    [view_employee_list].[EmployeeName] AS [EmployeeName], 
+    [view_employee_list].[CompanyName] AS [CompanyName], 
+    [view_employee_list].[DepartmentName] AS [DepartmentName], 
+    [view_employee_list].[Job] AS [Job]
+    FROM [dbo].[view_employee_list] AS [view_employee_list]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_employee_list_v2" EntityType="Self.view_employee_list_v2" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_employee_list_v2].[EmployeeID] AS [EmployeeID], 
+    [view_employee_list_v2].[EmployeeName] AS [EmployeeName], 
+    [view_employee_list_v2].[CompanyName] AS [CompanyName], 
+    [view_employee_list_v2].[DepartmentName] AS [DepartmentName], 
+    [view_employee_list_v2].[Job] AS [Job]
+    FROM [dbo].[view_employee_list_v2] AS [view_employee_list_v2]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_employee_loan" EntityType="Self.view_employee_loan" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_employee_loan].[id] AS [id], 
+    [view_employee_loan].[emp_id] AS [emp_id], 
+    [view_employee_loan].[amount] AS [amount], 
+    [view_employee_loan].[effective_date] AS [effective_date], 
+    [view_employee_loan].[status] AS [status], 
+    [view_employee_loan].[preparedby] AS [preparedby], 
+    [view_employee_loan].[dateprepared] AS [dateprepared], 
+    [view_employee_loan].[releasedby] AS [releasedby], 
+    [view_employee_loan].[datereleased] AS [datereleased], 
+    [view_employee_loan].[voidby] AS [voidby], 
+    [view_employee_loan].[datevoid] AS [datevoid], 
+    [view_employee_loan].[EmployeeName] AS [EmployeeName], 
+    [view_employee_loan].[PreparedByName] AS [PreparedByName], 
+    [view_employee_loan].[ReleasedByName] AS [ReleasedByName], 
+    [view_employee_loan].[VoidByName] AS [VoidByName], 
+    [view_employee_loan].[Company] AS [Company], 
+    [view_employee_loan].[Department] AS [Department]
+    FROM [dbo].[view_employee_loan] AS [view_employee_loan]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_employee_no_user_account" EntityType="Self.view_employee_no_user_account" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_employee_no_user_account].[id] AS [id], 
+    [view_employee_no_user_account].[EmployeeName] AS [EmployeeName]
+    FROM [dbo].[view_employee_no_user_account] AS [view_employee_no_user_account]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_employee_timesheet_list" EntityType="Self.view_employee_timesheet_list" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_employee_timesheet_list].[id] AS [id], 
+    [view_employee_timesheet_list].[EmpName] AS [EmpName], 
+    [view_employee_timesheet_list].[company] AS [company], 
+    [view_employee_timesheet_list].[department] AS [department], 
+    [view_employee_timesheet_list].[timesheetID] AS [timesheetID], 
+    [view_employee_timesheet_list].[emp_id] AS [emp_id], 
+    [view_employee_timesheet_list].[date_from] AS [date_from], 
+    [view_employee_timesheet_list].[date_to] AS [date_to], 
+    [view_employee_timesheet_list].[working_days] AS [working_days], 
+    [view_employee_timesheet_list].[holidays] AS [holidays], 
+    [view_employee_timesheet_list].[days_absent] AS [days_absent], 
+    [view_employee_timesheet_list].[duty_hours] AS [duty_hours], 
+    [view_employee_timesheet_list].[lates] AS [lates], 
+    [view_employee_timesheet_list].[undertime] AS [undertime], 
+    [view_employee_timesheet_list].[overtime] AS [overtime], 
+    [view_employee_timesheet_list].[preparedby] AS [preparedby], 
+    [view_employee_timesheet_list].[prepared_date] AS [prepared_date], 
+    [view_employee_timesheet_list].[approvedby] AS [approvedby], 
+    [view_employee_timesheet_list].[approved_date] AS [approved_date], 
+    [view_employee_timesheet_list].[cancelledby] AS [cancelledby], 
+    [view_employee_timesheet_list].[cancelled_date] AS [cancelled_date], 
+    [view_employee_timesheet_list].[status] AS [status]
+    FROM [dbo].[view_employee_timesheet_list] AS [view_employee_timesheet_list]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_job_list" EntityType="Self.view_job_list" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_job_list].[JobID] AS [JobID], 
+    [view_job_list].[JobName] AS [JobName], 
+    [view_job_list].[CompanyName] AS [CompanyName], 
+    [view_job_list].[DepartmentName] AS [DepartmentName]
+    FROM [dbo].[view_job_list] AS [view_job_list]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="view_user_account_list" EntityType="Self.view_user_account_list" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [view_user_account_list].[id] AS [id], 
+    [view_user_account_list].[Name] AS [Name], 
+    [view_user_account_list].[UserName] AS [UserName]
+    FROM [dbo].[view_user_account_list] AS [view_user_account_list]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

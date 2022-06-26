@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbPayrollModelStoreContainer" CdmEntityContainer="dbPayrollEntities">
+    <EntitySetMapping Name="tbl_account_type">
+      <EntityTypeMapping TypeName="dbPayrollModel.tbl_account_type">
+        <MappingFragment StoreEntitySet="tbl_account_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_attendance">
+      <EntityTypeMapping TypeName="dbPayrollModel.tbl_attendance">
+        <MappingFragment StoreEntitySet="tbl_attendance">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="timein" ColumnName="timein" />
+          <ScalarProperty Name="timeout" ColumnName="timeout" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_company">
+      <EntityTypeMapping TypeName="dbPayrollModel.tbl_company">
+        <MappingFragment StoreEntitySet="tbl_company">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_department">
+      <EntityTypeMapping TypeName="dbPayrollModel.tbl_department">
+        <MappingFragment StoreEntitySet="tbl_department">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_dtr">
+      <EntityTypeMapping TypeName="dbPayrollModel.tbl_dtr">
+        <MappingFragment StoreEntitySet="tbl_dtr">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="check_in" ColumnName="check_in" />
+          <ScalarProperty Name="check_out" ColumnName="check_out" />
+          <ScalarProperty Name="total_duty_hours" ColumnName="total_duty_hours" />
+          <ScalarProperty Name="lates" ColumnName="lates" />
+          <ScalarProperty Name="undertime" ColumnName="undertime" />
+          <ScalarProperty Name="total_overtime" ColumnName="total_overtime" />
+          <ScalarProperty Name="ot_start" ColumnName="ot_start" />
+          <ScalarProperty Name="ot_end" ColumnName="ot_end" />
+          <ScalarProperty Name="ot_status" ColumnName="ot_status" />
+          <ScalarProperty Name="holiday_work_hours" ColumnName="holiday_work_hours" />
+          <ScalarProperty Name="holiday_work_status" ColumnName="holiday_work_status" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="isHoliday" ColumnName="isHoliday" />
+          <ScalarProperty Name="isRD" ColumnName="isRD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_employee">
+      <EntityTypeMapping TypeName="dbPayrollModel.tbl_employee">
+        <MappingFragment StoreEntitySet="tbl_employee">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="middlename" ColumnName="middlename" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="job_id" ColumnName="job_id" />
+          <ScalarProperty Name="schedule" ColumnName="schedule" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+          <ScalarProperty Name="civil_status" ColumnName="civil_status" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="usertype" ColumnName="usertype" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_employee_government">
+      <EntityTypeMapping TypeName="dbPayrollModel.tbl_employee_government">
+        <MappingFragment StoreEntitySet="tbl_employee_government">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="has_sss" ColumnName="has_sss" />
+          <ScalarProperty Name="sss_number" ColumnName="sss_number" />
+          <ScalarProperty Name="has_philhealth" ColumnName="has_philhealth" />
+          <ScalarProperty Name="philhealth_number" ColumnName="philhealth_number" />
+          <ScalarProperty Name="has_pagibig" ColumnName="has_pagibig" />
+          <ScalarProperty Name="pagibig_number" ColumnName="pagibig_number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_employee_rate">
+      <EntityTypeMapping TypeName="dbPayrollModel.tbl_employee_rate">
+        <MappingFragment StoreEntitySet="tbl_employee_rate">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="rate" ColumnName="rate" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="effective_date" ColumnName="effective_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_employee_timesheet">
+      <EntityTypeMapping TypeName="dbPayrollModel.tbl_employee_timesheet">
+        <MappingFragment StoreEntitySet="tbl_employee_timesheet">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="date_from" ColumnName="date_from" />
+          <ScalarProperty Name="date_to" ColumnName="date_to" />
+          <ScalarProperty Name="working_days" ColumnName="working_days" />
+          <ScalarProperty Name="holidays" ColumnName="holidays" />
+          <ScalarProperty Name="days_absent" ColumnName="days_absent" />
+          <ScalarProperty Name="duty_hours" ColumnName="duty_hours" />
+          <ScalarProperty Name="lates" ColumnName="lates" />
+          <ScalarProperty Name="undertime" ColumnName="undertime" />
+          <ScalarProperty Name="overtime" ColumnName="overtime" />
+          <ScalarProperty Name="preparedby" ColumnName="preparedby" />
+          <ScalarProperty Name="prepared_date" ColumnName="prepared_date" />
+          <ScalarProperty Name="approvedby" ColumnName="approvedby" />
+          <ScalarProperty Name="approved_date" ColumnName="approved_date" />
+          <ScalarProperty Name="cancelledby" ColumnName="cancelledby" />
+          <ScalarProperty Name="cancelled_date" ColumnName="cancelled_date" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_holiday">
+      <EntityTypeMapping TypeName="dbPayrollModel.tbl_holiday">
+        <MappingFragment StoreEntitySet="tbl_holiday">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="holiday_name" ColumnName="holiday_name" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_jobs">
+      <EntityTypeMapping TypeName="dbPayrollModel.tbl_jobs">
+        <MappingFragment StoreEntitySet="tbl_jobs">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_loan">
+      <EntityTypeMapping TypeName="dbPayrollModel.tbl_loan">
+        <MappingFragment StoreEntitySet="tbl_loan">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="effective_date" ColumnName="effective_date" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="preparedby" ColumnName="preparedby" />
+          <ScalarProperty Name="dateprepared" ColumnName="dateprepared" />
+          <ScalarProperty Name="releasedby" ColumnName="releasedby" />
+          <ScalarProperty Name="datereleased" ColumnName="datereleased" />
+          <ScalarProperty Name="voidby" ColumnName="voidby" />
+          <ScalarProperty Name="datevoid" ColumnName="datevoid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_schedule">
+      <EntityTypeMapping TypeName="dbPayrollModel.tbl_schedule">
+        <MappingFragment StoreEntitySet="tbl_schedule">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="time_in" ColumnName="time_in" />
+          <ScalarProperty Name="time_out" ColumnName="time_out" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="grace_time" ColumnName="grace_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_sss_contribution">
+      <EntityTypeMapping TypeName="dbPayrollModel.tbl_sss_contribution">
+        <MappingFragment StoreEntitySet="tbl_sss_contribution">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="start_range" ColumnName="start_range" />
+          <ScalarProperty Name="end_range" ColumnName="end_range" />
+          <ScalarProperty Name="monthly_salary_credit" ColumnName="monthly_salary_credit" />
+          <ScalarProperty Name="social_security_er" ColumnName="social_security_er" />
+          <ScalarProperty Name="social_security_ee" ColumnName="social_security_ee" />
+          <ScalarProperty Name="social_security_total" ColumnName="social_security_total" />
+          <ScalarProperty Name="ec_er" ColumnName="ec_er" />
+          <ScalarProperty Name="total_contribution_er" ColumnName="total_contribution_er" />
+          <ScalarProperty Name="total_contribution_ee" ColumnName="total_contribution_ee" />
+          <ScalarProperty Name="grand_total_contribution" ColumnName="grand_total_contribution" />
+          <ScalarProperty Name="total_contribution" ColumnName="total_contribution" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_department_list">
+      <EntityTypeMapping TypeName="dbPayrollModel.view_department_list">
+        <MappingFragment StoreEntitySet="view_department_list">
+          <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Employee">
+      <EntityTypeMapping TypeName="dbPayrollModel.View_Employee">
+        <MappingFragment StoreEntitySet="View_Employee">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="middlename" ColumnName="middlename" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+          <ScalarProperty Name="civil_status" ColumnName="civil_status" />
+          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="usertype" ColumnName="usertype" />
+          <ScalarProperty Name="CivilStatus" ColumnName="CivilStatus" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="Company_Name" ColumnName="Company Name" />
+          <ScalarProperty Name="Department_Name" ColumnName="Department Name" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="DeptId" ColumnName="DeptId" />
+          <ScalarProperty Name="Employee_Status" ColumnName="Employee Status" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="schedule" ColumnName="schedule" />
+          <ScalarProperty Name="job_id" ColumnName="job_id" />
+          <ScalarProperty Name="JobName" ColumnName="JobName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_employee_list">
+      <EntityTypeMapping TypeName="dbPayrollModel.view_employee_list">
+        <MappingFragment StoreEntitySet="view_employee_list">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="Job" ColumnName="Job" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_employee_list_v2">
+      <EntityTypeMapping TypeName="dbPayrollModel.view_employee_list_v2">
+        <MappingFragment StoreEntitySet="view_employee_list_v2">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+          <ScalarProperty Name="Job" ColumnName="Job" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_employee_loan">
+      <EntityTypeMapping TypeName="dbPayrollModel.view_employee_loan">
+        <MappingFragment StoreEntitySet="view_employee_loan">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="effective_date" ColumnName="effective_date" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="preparedby" ColumnName="preparedby" />
+          <ScalarProperty Name="dateprepared" ColumnName="dateprepared" />
+          <ScalarProperty Name="releasedby" ColumnName="releasedby" />
+          <ScalarProperty Name="datereleased" ColumnName="datereleased" />
+          <ScalarProperty Name="voidby" ColumnName="voidby" />
+          <ScalarProperty Name="datevoid" ColumnName="datevoid" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="PreparedByName" ColumnName="PreparedByName" />
+          <ScalarProperty Name="ReleasedByName" ColumnName="ReleasedByName" />
+          <ScalarProperty Name="VoidByName" ColumnName="VoidByName" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_employee_no_user_account">
+      <EntityTypeMapping TypeName="dbPayrollModel.view_employee_no_user_account">
+        <MappingFragment StoreEntitySet="view_employee_no_user_account">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_employee_timesheet_list">
+      <EntityTypeMapping TypeName="dbPayrollModel.view_employee_timesheet_list">
+        <MappingFragment StoreEntitySet="view_employee_timesheet_list">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="timesheetID" ColumnName="timesheetID" />
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="date_from" ColumnName="date_from" />
+          <ScalarProperty Name="date_to" ColumnName="date_to" />
+          <ScalarProperty Name="working_days" ColumnName="working_days" />
+          <ScalarProperty Name="holidays" ColumnName="holidays" />
+          <ScalarProperty Name="days_absent" ColumnName="days_absent" />
+          <ScalarProperty Name="duty_hours" ColumnName="duty_hours" />
+          <ScalarProperty Name="lates" ColumnName="lates" />
+          <ScalarProperty Name="undertime" ColumnName="undertime" />
+          <ScalarProperty Name="overtime" ColumnName="overtime" />
+          <ScalarProperty Name="preparedby" ColumnName="preparedby" />
+          <ScalarProperty Name="prepared_date" ColumnName="prepared_date" />
+          <ScalarProperty Name="approvedby" ColumnName="approvedby" />
+          <ScalarProperty Name="approved_date" ColumnName="approved_date" />
+          <ScalarProperty Name="cancelledby" ColumnName="cancelledby" />
+          <ScalarProperty Name="cancelled_date" ColumnName="cancelled_date" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_job_list">
+      <EntityTypeMapping TypeName="dbPayrollModel.view_job_list">
+        <MappingFragment StoreEntitySet="view_job_list">
+          <ScalarProperty Name="JobID" ColumnName="JobID" />
+          <ScalarProperty Name="JobName" ColumnName="JobName" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="view_user_account_list">
+      <EntityTypeMapping TypeName="dbPayrollModel.view_user_account_list">
+        <MappingFragment StoreEntitySet="view_user_account_list">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_payslip_adjustment">
+      <EntityTypeMapping TypeName="dbPayrollModel.tbl_payslip_adjustment">
+        <MappingFragment StoreEntitySet="tbl_payslip_adjustment">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="adjustment" ColumnName="adjustment" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="payslip_id" ColumnName="payslip_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_payslip_government_dedution">
+      <EntityTypeMapping TypeName="dbPayrollModel.tbl_payslip_government_dedution">
+        <MappingFragment StoreEntitySet="tbl_payslip_government_dedution">
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="government" ColumnName="government" />
+          <ScalarProperty Name="payslip_id" ColumnName="payslip_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_payslip_additionals">
+      <EntityTypeMapping TypeName="dbPayrollModel.tbl_payslip_additionals">
+        <MappingFragment StoreEntitySet="tbl_payslip_additionals">
+          <ScalarProperty Name="addedby" ColumnName="addedby" />
+          <ScalarProperty Name="dateadded" ColumnName="dateadded" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="payslip_id" ColumnName="payslip_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_payslip_deductions">
+      <EntityTypeMapping TypeName="dbPayrollModel.tbl_payslip_deductions">
+        <MappingFragment StoreEntitySet="tbl_payslip_deductions">
+          <ScalarProperty Name="addedby" ColumnName="addedby" />
+          <ScalarProperty Name="dateadded" ColumnName="dateadded" />
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="payslip_id" ColumnName="payslip_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_payslip_loan_deduction">
+      <EntityTypeMapping TypeName="dbPayrollModel.tbl_payslip_loan_deduction">
+        <MappingFragment StoreEntitySet="tbl_payslip_loan_deduction">
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="payslip_id" ColumnName="payslip_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_payslip_less">
+      <EntityTypeMapping TypeName="dbPayrollModel.tbl_payslip_less">
+        <MappingFragment StoreEntitySet="tbl_payslip_less">
+          <ScalarProperty Name="minutes" ColumnName="minutes" />
+          <ScalarProperty Name="days" ColumnName="days" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="payslip_id" ColumnName="payslip_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_payslip_overtime">
+      <EntityTypeMapping TypeName="dbPayrollModel.tbl_payslip_overtime">
+        <MappingFragment StoreEntitySet="tbl_payslip_overtime">
+          <ScalarProperty Name="ot_hours" ColumnName="ot_hours" />
+          <ScalarProperty Name="ot_date" ColumnName="ot_date" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="payslip_id" ColumnName="payslip_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_payslip_holiday">
+      <EntityTypeMapping TypeName="dbPayrollModel.tbl_payslip_holiday">
+        <MappingFragment StoreEntitySet="tbl_payslip_holiday">
+          <ScalarProperty Name="holiday_percent" ColumnName="holiday_percent" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="holiday_date" ColumnName="holiday_date" />
+          <ScalarProperty Name="holiday_id" ColumnName="holiday_id" />
+          <ScalarProperty Name="payslip_id" ColumnName="payslip_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_payslip_detail">
+      <EntityTypeMapping TypeName="dbPayrollModel.tbl_payslip_detail">
+        <MappingFragment StoreEntitySet="tbl_payslip_detail">
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="hours" ColumnName="hours" />
+          <ScalarProperty Name="days" ColumnName="days" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="payslip_id" ColumnName="payslip_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_employee_account">
+      <EntityTypeMapping TypeName="dbPayrollModel.tbl_employee_account">
+        <MappingFragment StoreEntitySet="tbl_employee_account">
+          <ScalarProperty Name="is_active" ColumnName="is_active" />
+          <ScalarProperty Name="answer" ColumnName="answer" />
+          <ScalarProperty Name="question" ColumnName="question" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="usertype" ColumnName="usertype" />
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_payslip">
+      <EntityTypeMapping TypeName="dbPayrollModel.tbl_payslip">
+        <MappingFragment StoreEntitySet="tbl_payslip">
+          <ScalarProperty Name="dateto" ColumnName="dateto" />
+          <ScalarProperty Name="datefrom" ColumnName="datefrom" />
+          <ScalarProperty Name="remarks" ColumnName="remarks" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="datecancelled" ColumnName="datecancelled" />
+          <ScalarProperty Name="cancelledby" ColumnName="cancelledby" />
+          <ScalarProperty Name="dateapproved" ColumnName="dateapproved" />
+          <ScalarProperty Name="approvedby" ColumnName="approvedby" />
+          <ScalarProperty Name="dateprepared" ColumnName="dateprepared" />
+          <ScalarProperty Name="preparedby" ColumnName="preparedby" />
+          <ScalarProperty Name="semi_monthly_rate" ColumnName="semi_monthly_rate" />
+          <ScalarProperty Name="monthly_rate" ColumnName="monthly_rate" />
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="timesheet_id" ColumnName="timesheet_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

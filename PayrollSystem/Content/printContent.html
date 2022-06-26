@@ -1,0 +1,85 @@
+﻿
+<div style="text-align:center;">
+    <h2>{{COMPANY_NAME}}</h2>
+    <span style="font-size:12px;">WORKING DATES: {{WORING_DATES}}</span>
+    <br />
+    <br />
+    <table style="width:100%;">
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td style="font-size:12px;">NAME:</td>
+                        <td style="font-size:12px;">{{EMPLOYEE_NAME}}</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size:12px;">DESIGNATION:</td>
+                        <td style="font-size:12px;">{{EMPLOYEE_DESIGNATION}}</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table>
+                    <tr>
+                        <td style="font-size:12px;">PAYSLIP#:</td>
+                        <td style="font-size:12px;">{{PAYSLIP_ID}}</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size:12px;">DEPARTMENT:</td>
+                        <td style="font-size:12px;">{{EMPLOYEE_DEPARTMENT}}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <table style="width:100%;" border="1">
+        <tr>
+            <td style="font-size:12px;">GROSS DETAILS</td>
+            <td style="font-size:12px;">DEDUCTION DETAILS</td>
+        </tr>
+        <tr>
+            <td style="font-size: 12px;">
+                <span style="font-weight:bold;">ADDITIONALS</span>
+                <table style="width:100%;">
+                    <tbody>{{TBODY_ADDITIONALS}}</tbody>
+                </table>
+                <div style="width:100%; border-top:1px dashed #000; ">&nbsp;</div>
+                <span style="font-weight:bold;">LESS</span>
+                <table>
+                    <tbody>{{TBODY_LESS}}</tbody>
+                </table>
+            </td>
+
+            <td style="font-size: 12px;">
+                <span style="font-weight:bold;">DEDUCTIONS</span>
+                <table style="width:100%;">
+                    <tbody>{{TBODY_DEDUCTION}}</tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="width:100%;">
+                    <tr>
+                        <td style="font-size:12px;"><strong>TOTAL GROSS</strong></td>
+                        <td style="text-align:right; font-size:12px;"><strong>{{TOTAL_GROSS}}</strong></td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table style="width:100%;">
+                    <tr>
+                        <td style="font-size:12px;"><strong>TOTAL DEDUCTION</strong></td>
+                        <td style="text-align:right; font-size:12px;"><strong>{{TOTAL_DEDUCTION}}</strong></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+<div style="font-size: 12px;">
+    <span style="font-size:12px;"><strong>NET AMOUNT: {{NET_AMOUNT}}</strong></span>
+    <br />
+    <span style="font-size:12px;"><strong>AMOUNT IN WORDS: ***** {{NET_AMOUNT_IN_WORDS}} *****</strong></span>
+</div>

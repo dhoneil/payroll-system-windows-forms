@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
+  <metadata minClientVersion="2.0">
+    <id>Winform.Metroframework</id>
+    <version>1.4.0</version>
+    <title>Metroframework</title>
+    <authors>Eduardo, fozzedout</authors>
+    <owners>Eduardo, fozzedout</owners>
+    <licenseUrl>https://github.com/cecon/winforms-modernui/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/cecon/winforms-modernui</projectUrl>
+    <iconUrl>https://github.com/cecon/winforms-modernui/blob/master/metroframework.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Brings the new Modern UI alias Metro UI of Windows 8 to .NET Windows Forms applications.</description>
+    <summary>MetroFramework - WinForms on steroids.</summary>
+    <copyright>Copyright © 2015 Eduardo Cecon</copyright>
+    <language>en-US</language>
+    <tags>Metroframework ModerUI</tags>
+  </metadata>
+</package>

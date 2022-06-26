@@ -1,0 +1,1636 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="dbPayrollModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_account_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_attendance">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="emp_id" Type="bigint" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="timein" Type="datetime" />
+          <Property Name="timeout" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_company">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="300" />
+          <Property Name="address" Type="varchar" MaxLength="50" />
+          <Property Name="is_active" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_department">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="company" Type="bigint" />
+          <Property Name="name" Type="varchar" MaxLength="300" />
+          <Property Name="is_active" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_dtr">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="emp_id" Type="bigint" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="year" Type="varchar" MaxLength="50" />
+          <Property Name="check_in" Type="datetime" />
+          <Property Name="check_out" Type="datetime" />
+          <Property Name="total_duty_hours" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="lates" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="undertime" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="total_overtime" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ot_start" Type="datetime" />
+          <Property Name="ot_end" Type="datetime" />
+          <Property Name="ot_status" Type="varchar" MaxLength="50" />
+          <Property Name="holiday_work_hours" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="holiday_work_status" Type="varchar" MaxLength="50" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+          <Property Name="isHoliday" Type="bit" />
+          <Property Name="isRD" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_employee">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstname" Type="varchar" MaxLength="300" />
+          <Property Name="middlename" Type="varchar" MaxLength="300" />
+          <Property Name="lastname" Type="varchar" MaxLength="300" />
+          <Property Name="department" Type="bigint" />
+          <Property Name="company" Type="bigint" />
+          <Property Name="job_id" Type="bigint" />
+          <Property Name="schedule" Type="bigint" />
+          <Property Name="address" Type="varchar(max)" />
+          <Property Name="birthdate" Type="datetime" />
+          <Property Name="civil_status" Type="varchar" MaxLength="50" />
+          <Property Name="gender" Type="varchar" MaxLength="50" />
+          <Property Name="usertype" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
+          <Property Name="is_active" Type="bit" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_employee_account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="emp_id" Type="bigint" />
+          <Property Name="usertype" Type="varchar" MaxLength="50" />
+          <Property Name="username" Type="varchar" MaxLength="200" />
+          <Property Name="password" Type="varchar(max)" />
+          <Property Name="question" Type="varchar(max)" />
+          <Property Name="answer" Type="varchar(max)" />
+          <Property Name="is_active" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_employee_government">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="emp_id" Type="bigint" />
+          <Property Name="has_sss" Type="bit" />
+          <Property Name="sss_number" Type="varchar" MaxLength="100" />
+          <Property Name="has_philhealth" Type="bit" />
+          <Property Name="philhealth_number" Type="varchar" MaxLength="100" />
+          <Property Name="has_pagibig" Type="bit" />
+          <Property Name="pagibig_number" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="tbl_employee_rate">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="emp_id" Type="bigint" />
+          <Property Name="rate" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="is_active" Type="bit" />
+          <Property Name="effective_date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_employee_timesheet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="emp_id" Type="bigint" />
+          <Property Name="date_from" Type="datetime" />
+          <Property Name="date_to" Type="datetime" />
+          <Property Name="working_days" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="holidays" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="days_absent" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="duty_hours" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="lates" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="undertime" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="overtime" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="preparedby" Type="bigint" />
+          <Property Name="prepared_date" Type="datetime" />
+          <Property Name="approvedby" Type="bigint" />
+          <Property Name="approved_date" Type="datetime" />
+          <Property Name="cancelledby" Type="bigint" />
+          <Property Name="cancelled_date" Type="datetime" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_holiday">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="holiday_name" Type="varchar" MaxLength="300" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="type" Type="varchar" MaxLength="50" />
+          <Property Name="is_active" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_jobs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="company" Type="bigint" />
+          <Property Name="department" Type="bigint" />
+          <Property Name="name" Type="varchar" MaxLength="300" />
+          <Property Name="is_active" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_loan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="emp_id" Type="bigint" />
+          <Property Name="amount" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="effective_date" Type="datetime" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+          <Property Name="preparedby" Type="bigint" />
+          <Property Name="dateprepared" Type="datetime" />
+          <Property Name="releasedby" Type="bigint" />
+          <Property Name="datereleased" Type="datetime" />
+          <Property Name="voidby" Type="bigint" />
+          <Property Name="datevoid" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_payslip">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="timesheet_id" Type="bigint" />
+          <Property Name="emp_id" Type="bigint" />
+          <Property Name="monthly_rate" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="semi_monthly_rate" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="preparedby" Type="bigint" />
+          <Property Name="dateprepared" Type="datetime" />
+          <Property Name="approvedby" Type="bigint" />
+          <Property Name="dateapproved" Type="datetime" />
+          <Property Name="cancelledby" Type="bigint" />
+          <Property Name="datecancelled" Type="datetime" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+          <Property Name="remarks" Type="varchar(max)" />
+          <Property Name="datefrom" Type="date" />
+          <Property Name="dateto" Type="date" />
+        </EntityType>
+        <EntityType Name="tbl_payslip_additionals">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="payslip_id" Type="bigint" />
+          <Property Name="name" Type="varchar" MaxLength="120" />
+          <Property Name="amount" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="dateadded" Type="date" />
+          <Property Name="addedby" Type="bigint" />
+        </EntityType>
+        <EntityType Name="tbl_payslip_adjustment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="payslip_id" Type="bigint" />
+          <Property Name="type" Type="varchar" MaxLength="50" />
+          <Property Name="amount" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="adjustment" Type="varchar" MaxLength="300" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_payslip_deductions">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="payslip_id" Type="bigint" />
+          <Property Name="name" Type="varchar" MaxLength="120" />
+          <Property Name="amount" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="is_active" Type="bit" />
+          <Property Name="dateadded" Type="date" />
+          <Property Name="addedby" Type="bigint" />
+        </EntityType>
+        <EntityType Name="tbl_payslip_detail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="payslip_id" Type="bigint" />
+          <Property Name="name" Type="varchar" MaxLength="300" />
+          <Property Name="amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="days" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="hours" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="type" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_payslip_government_dedution">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="payslip_id" Type="bigint" />
+          <Property Name="government" Type="varchar" MaxLength="50" />
+          <Property Name="amount" Type="decimal" Precision="18" Scale="4" />
+        </EntityType>
+        <EntityType Name="tbl_payslip_holiday">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="payslip_id" Type="bigint" />
+          <Property Name="holiday_id" Type="bigint" />
+          <Property Name="holiday_date" Type="date" />
+          <Property Name="amount" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="holiday_percent" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="tbl_payslip_less">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="payslip_id" Type="bigint" />
+          <Property Name="name" Type="varchar" MaxLength="150" />
+          <Property Name="amount" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="days" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="minutes" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="tbl_payslip_loan_deduction">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="payslip_id" Type="bigint" />
+          <Property Name="amount" Type="decimal" Precision="18" Scale="4" />
+        </EntityType>
+        <EntityType Name="tbl_payslip_overtime">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="payslip_id" Type="bigint" />
+          <Property Name="amount" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="ot_date" Type="date" />
+          <Property Name="ot_hours" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="tbl_schedule">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="time_in" Type="datetime" />
+          <Property Name="time_out" Type="datetime" />
+          <Property Name="name" Type="varchar" MaxLength="100" />
+          <Property Name="grace_time" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dbPayroll.dbo.tbl_sss_contribution' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tbl_sss_contribution">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="start_range" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="end_range" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="monthly_salary_credit" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="social_security_er" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="social_security_ee" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="social_security_total" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ec_er" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="total_contribution_er" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="total_contribution_ee" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="grand_total_contribution" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="total_contribution" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dbPayroll.dbo.view_department_list' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="view_department_list">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="DepartmentID" Type="bigint" Nullable="false" />
+          <Property Name="DepartmentName" Type="varchar" MaxLength="300" />
+          <Property Name="CompanyID" Type="bigint" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dbPayroll.dbo.View_Employee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="View_Employee">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" />
+          <Property Name="firstname" Type="varchar" MaxLength="300" />
+          <Property Name="middlename" Type="varchar" MaxLength="300" />
+          <Property Name="lastname" Type="varchar" MaxLength="300" />
+          <Property Name="is_active" Type="bit" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+          <Property Name="company" Type="bigint" />
+          <Property Name="department" Type="bigint" />
+          <Property Name="address" Type="varchar(max)" />
+          <Property Name="birthdate" Type="datetime" />
+          <Property Name="civil_status" Type="varchar" MaxLength="50" />
+          <Property Name="gender" Type="varchar" MaxLength="50" />
+          <Property Name="usertype" Type="varchar" MaxLength="50" />
+          <Property Name="CivilStatus" Type="varchar" MaxLength="50" />
+          <Property Name="EmployeeName" Type="varchar" MaxLength="602" />
+          <Property Name="Company Name" Type="varchar" MaxLength="300" />
+          <Property Name="Department Name" Type="varchar" MaxLength="300" />
+          <Property Name="CompanyId" Type="bigint" />
+          <Property Name="DeptId" Type="bigint" />
+          <Property Name="Employee Status" Type="varchar" MaxLength="8" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
+          <Property Name="schedule" Type="bigint" />
+          <Property Name="job_id" Type="bigint" />
+          <Property Name="JobName" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dbPayroll.dbo.view_employee_list' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="view_employee_list">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="bigint" Nullable="false" />
+          <Property Name="EmployeeName" Type="varchar" MaxLength="601" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="300" />
+          <Property Name="DepartmentName" Type="varchar" MaxLength="300" />
+          <Property Name="Job" Type="bigint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dbPayroll.dbo.view_employee_list_v2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="view_employee_list_v2">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="bigint" Nullable="false" />
+          <Property Name="EmployeeName" Type="varchar" MaxLength="601" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="300" />
+          <Property Name="DepartmentName" Type="varchar" MaxLength="300" />
+          <Property Name="Job" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dbPayroll.dbo.view_employee_loan' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="view_employee_loan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" />
+          <Property Name="emp_id" Type="bigint" />
+          <Property Name="amount" Type="decimal" Precision="18" Scale="4" />
+          <Property Name="effective_date" Type="datetime" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+          <Property Name="preparedby" Type="bigint" />
+          <Property Name="dateprepared" Type="datetime" />
+          <Property Name="releasedby" Type="bigint" />
+          <Property Name="datereleased" Type="datetime" />
+          <Property Name="voidby" Type="bigint" />
+          <Property Name="datevoid" Type="datetime" />
+          <Property Name="EmployeeName" Type="varchar" MaxLength="602" />
+          <Property Name="PreparedByName" Type="varchar" MaxLength="602" />
+          <Property Name="ReleasedByName" Type="varchar" MaxLength="602" />
+          <Property Name="VoidByName" Type="varchar" MaxLength="602" />
+          <Property Name="Company" Type="varchar" MaxLength="300" />
+          <Property Name="Department" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dbPayroll.dbo.view_employee_no_user_account' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="view_employee_no_user_account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeName" Type="varchar" MaxLength="601" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dbPayroll.dbo.view_employee_timesheet_list' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="view_employee_timesheet_list">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" />
+          <Property Name="EmpName" Type="varchar" MaxLength="601" />
+          <Property Name="company" Type="bigint" />
+          <Property Name="department" Type="bigint" />
+          <Property Name="timesheetID" Type="bigint" />
+          <Property Name="emp_id" Type="bigint" />
+          <Property Name="date_from" Type="datetime" />
+          <Property Name="date_to" Type="datetime" />
+          <Property Name="working_days" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="holidays" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="days_absent" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="duty_hours" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="lates" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="undertime" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="overtime" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="preparedby" Type="bigint" />
+          <Property Name="prepared_date" Type="datetime" />
+          <Property Name="approvedby" Type="bigint" />
+          <Property Name="approved_date" Type="datetime" />
+          <Property Name="cancelledby" Type="bigint" />
+          <Property Name="cancelled_date" Type="datetime" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dbPayroll.dbo.view_job_list' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="view_job_list">
+          <Key>
+            <PropertyRef Name="JobID" />
+          </Key>
+          <Property Name="JobID" Type="bigint" Nullable="false" />
+          <Property Name="JobName" Type="varchar" MaxLength="300" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="300" />
+          <Property Name="DepartmentName" Type="varchar" MaxLength="300" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'dbPayroll.dbo.view_user_account_list' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="view_user_account_list">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="601" />
+          <Property Name="UserName" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityContainer Name="dbPayrollModelStoreContainer">
+          <EntitySet Name="tbl_account_type" EntityType="Self.tbl_account_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_attendance" EntityType="Self.tbl_attendance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_company" EntityType="Self.tbl_company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_department" EntityType="Self.tbl_department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_dtr" EntityType="Self.tbl_dtr" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_employee" EntityType="Self.tbl_employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_employee_account" EntityType="Self.tbl_employee_account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_employee_government" EntityType="Self.tbl_employee_government" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_employee_rate" EntityType="Self.tbl_employee_rate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_employee_timesheet" EntityType="Self.tbl_employee_timesheet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_holiday" EntityType="Self.tbl_holiday" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_jobs" EntityType="Self.tbl_jobs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_loan" EntityType="Self.tbl_loan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_payslip" EntityType="Self.tbl_payslip" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_payslip_additionals" EntityType="Self.tbl_payslip_additionals" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_payslip_adjustment" EntityType="Self.tbl_payslip_adjustment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_payslip_deductions" EntityType="Self.tbl_payslip_deductions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_payslip_detail" EntityType="Self.tbl_payslip_detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_payslip_government_dedution" EntityType="Self.tbl_payslip_government_dedution" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_payslip_holiday" EntityType="Self.tbl_payslip_holiday" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_payslip_less" EntityType="Self.tbl_payslip_less" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_payslip_loan_deduction" EntityType="Self.tbl_payslip_loan_deduction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_payslip_overtime" EntityType="Self.tbl_payslip_overtime" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_schedule" EntityType="Self.tbl_schedule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_sss_contribution" EntityType="Self.tbl_sss_contribution" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tbl_sss_contribution].[id] AS [id], 
+    [tbl_sss_contribution].[start_range] AS [start_range], 
+    [tbl_sss_contribution].[end_range] AS [end_range], 
+    [tbl_sss_contribution].[monthly_salary_credit] AS [monthly_salary_credit], 
+    [tbl_sss_contribution].[social_security_er] AS [social_security_er], 
+    [tbl_sss_contribution].[social_security_ee] AS [social_security_ee], 
+    [tbl_sss_contribution].[social_security_total] AS [social_security_total], 
+    [tbl_sss_contribution].[ec_er] AS [ec_er], 
+    [tbl_sss_contribution].[total_contribution_er] AS [total_contribution_er], 
+    [tbl_sss_contribution].[total_contribution_ee] AS [total_contribution_ee], 
+    [tbl_sss_contribution].[grand_total_contribution] AS [grand_total_contribution], 
+    [tbl_sss_contribution].[total_contribution] AS [total_contribution]
+    FROM [dbo].[tbl_sss_contribution] AS [tbl_sss_contribution]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="view_department_list" EntityType="Self.view_department_list" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [view_department_list].[DepartmentID] AS [DepartmentID], 
+    [view_department_list].[DepartmentName] AS [DepartmentName], 
+    [view_department_list].[CompanyID] AS [CompanyID], 
+    [view_department_list].[CompanyName] AS [CompanyName]
+    FROM [dbo].[view_department_list] AS [view_department_list]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="View_Employee" EntityType="Self.View_Employee" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [View_Employee].[id] AS [id], 
+    [View_Employee].[firstname] AS [firstname], 
+    [View_Employee].[middlename] AS [middlename], 
+    [View_Employee].[lastname] AS [lastname], 
+    [View_Employee].[is_active] AS [is_active], 
+    [View_Employee].[status] AS [status], 
+    [View_Employee].[company] AS [company], 
+    [View_Employee].[department] AS [department], 
+    [View_Employee].[address] AS [address], 
+    [View_Employee].[birthdate] AS [birthdate], 
+    [View_Employee].[civil_status] AS [civil_status], 
+    [View_Employee].[gender] AS [gender], 
+    [View_Employee].[usertype] AS [usertype], 
+    [View_Employee].[CivilStatus] AS [CivilStatus], 
+    [View_Employee].[EmployeeName] AS [EmployeeName], 
+    [View_Employee].[Company Name] AS [Company Name], 
+    [View_Employee].[Department Name] AS [Department Name], 
+    [View_Employee].[CompanyId] AS [CompanyId], 
+    [View_Employee].[DeptId] AS [DeptId], 
+    [View_Employee].[Employee Status] AS [Employee Status], 
+    [View_Employee].[email] AS [email], 
+    [View_Employee].[schedule] AS [schedule], 
+    [View_Employee].[job_id] AS [job_id], 
+    [View_Employee].[JobName] AS [JobName]
+    FROM [dbo].[View_Employee] AS [View_Employee]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="view_employee_list" EntityType="Self.view_employee_list" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [view_employee_list].[EmployeeID] AS [EmployeeID], 
+    [view_employee_list].[EmployeeName] AS [EmployeeName], 
+    [view_employee_list].[CompanyName] AS [CompanyName], 
+    [view_employee_list].[DepartmentName] AS [DepartmentName], 
+    [view_employee_list].[Job] AS [Job]
+    FROM [dbo].[view_employee_list] AS [view_employee_list]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="view_employee_list_v2" EntityType="Self.view_employee_list_v2" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [view_employee_list_v2].[EmployeeID] AS [EmployeeID], 
+    [view_employee_list_v2].[EmployeeName] AS [EmployeeName], 
+    [view_employee_list_v2].[CompanyName] AS [CompanyName], 
+    [view_employee_list_v2].[DepartmentName] AS [DepartmentName], 
+    [view_employee_list_v2].[Job] AS [Job]
+    FROM [dbo].[view_employee_list_v2] AS [view_employee_list_v2]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="view_employee_loan" EntityType="Self.view_employee_loan" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [view_employee_loan].[id] AS [id], 
+    [view_employee_loan].[emp_id] AS [emp_id], 
+    [view_employee_loan].[amount] AS [amount], 
+    [view_employee_loan].[effective_date] AS [effective_date], 
+    [view_employee_loan].[status] AS [status], 
+    [view_employee_loan].[preparedby] AS [preparedby], 
+    [view_employee_loan].[dateprepared] AS [dateprepared], 
+    [view_employee_loan].[releasedby] AS [releasedby], 
+    [view_employee_loan].[datereleased] AS [datereleased], 
+    [view_employee_loan].[voidby] AS [voidby], 
+    [view_employee_loan].[datevoid] AS [datevoid], 
+    [view_employee_loan].[EmployeeName] AS [EmployeeName], 
+    [view_employee_loan].[PreparedByName] AS [PreparedByName], 
+    [view_employee_loan].[ReleasedByName] AS [ReleasedByName], 
+    [view_employee_loan].[VoidByName] AS [VoidByName], 
+    [view_employee_loan].[Company] AS [Company], 
+    [view_employee_loan].[Department] AS [Department]
+    FROM [dbo].[view_employee_loan] AS [view_employee_loan]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="view_employee_no_user_account" EntityType="Self.view_employee_no_user_account" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [view_employee_no_user_account].[id] AS [id], 
+    [view_employee_no_user_account].[EmployeeName] AS [EmployeeName]
+    FROM [dbo].[view_employee_no_user_account] AS [view_employee_no_user_account]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="view_employee_timesheet_list" EntityType="Self.view_employee_timesheet_list" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [view_employee_timesheet_list].[id] AS [id], 
+    [view_employee_timesheet_list].[EmpName] AS [EmpName], 
+    [view_employee_timesheet_list].[company] AS [company], 
+    [view_employee_timesheet_list].[department] AS [department], 
+    [view_employee_timesheet_list].[timesheetID] AS [timesheetID], 
+    [view_employee_timesheet_list].[emp_id] AS [emp_id], 
+    [view_employee_timesheet_list].[date_from] AS [date_from], 
+    [view_employee_timesheet_list].[date_to] AS [date_to], 
+    [view_employee_timesheet_list].[working_days] AS [working_days], 
+    [view_employee_timesheet_list].[holidays] AS [holidays], 
+    [view_employee_timesheet_list].[days_absent] AS [days_absent], 
+    [view_employee_timesheet_list].[duty_hours] AS [duty_hours], 
+    [view_employee_timesheet_list].[lates] AS [lates], 
+    [view_employee_timesheet_list].[undertime] AS [undertime], 
+    [view_employee_timesheet_list].[overtime] AS [overtime], 
+    [view_employee_timesheet_list].[preparedby] AS [preparedby], 
+    [view_employee_timesheet_list].[prepared_date] AS [prepared_date], 
+    [view_employee_timesheet_list].[approvedby] AS [approvedby], 
+    [view_employee_timesheet_list].[approved_date] AS [approved_date], 
+    [view_employee_timesheet_list].[cancelledby] AS [cancelledby], 
+    [view_employee_timesheet_list].[cancelled_date] AS [cancelled_date], 
+    [view_employee_timesheet_list].[status] AS [status]
+    FROM [dbo].[view_employee_timesheet_list] AS [view_employee_timesheet_list]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="view_job_list" EntityType="Self.view_job_list" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [view_job_list].[JobID] AS [JobID], 
+    [view_job_list].[JobName] AS [JobName], 
+    [view_job_list].[CompanyName] AS [CompanyName], 
+    [view_job_list].[DepartmentName] AS [DepartmentName]
+    FROM [dbo].[view_job_list] AS [view_job_list]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="view_user_account_list" EntityType="Self.view_user_account_list" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [view_user_account_list].[id] AS [id], 
+    [view_user_account_list].[Name] AS [Name], 
+    [view_user_account_list].[UserName] AS [UserName]
+    FROM [dbo].[view_user_account_list] AS [view_user_account_list]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbPayrollModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbl_account_type">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_attendance">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="emp_id" Type="Int64" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="timein" Type="DateTime" Precision="3" />
+          <Property Name="timeout" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_company">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="is_active" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tbl_department">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="company" Type="Int64" />
+          <Property Name="name" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="is_active" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tbl_dtr">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="emp_id" Type="Int64" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="year" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="check_in" Type="DateTime" Precision="3" />
+          <Property Name="check_out" Type="DateTime" Precision="3" />
+          <Property Name="total_duty_hours" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="lates" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="undertime" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="total_overtime" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ot_start" Type="DateTime" Precision="3" />
+          <Property Name="ot_end" Type="DateTime" Precision="3" />
+          <Property Name="ot_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="holiday_work_hours" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="holiday_work_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isHoliday" Type="Boolean" />
+          <Property Name="isRD" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tbl_employee">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstname" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="middlename" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="lastname" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="department" Type="Int64" />
+          <Property Name="company" Type="Int64" />
+          <Property Name="job_id" Type="Int64" />
+          <Property Name="schedule" Type="Int64" />
+          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="birthdate" Type="DateTime" Precision="3" />
+          <Property Name="civil_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="usertype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="is_active" Type="Boolean" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_employee_government">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="emp_id" Type="Int64" />
+          <Property Name="has_sss" Type="Boolean" />
+          <Property Name="sss_number" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="has_philhealth" Type="Boolean" />
+          <Property Name="philhealth_number" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="has_pagibig" Type="Boolean" />
+          <Property Name="pagibig_number" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_employee_rate">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="emp_id" Type="Int64" />
+          <Property Name="rate" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="is_active" Type="Boolean" />
+          <Property Name="effective_date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_employee_timesheet">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="emp_id" Type="Int64" />
+          <Property Name="date_from" Type="DateTime" Precision="3" />
+          <Property Name="date_to" Type="DateTime" Precision="3" />
+          <Property Name="working_days" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="holidays" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="days_absent" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="duty_hours" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="lates" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="undertime" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="overtime" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="preparedby" Type="Int64" />
+          <Property Name="prepared_date" Type="DateTime" Precision="3" />
+          <Property Name="approvedby" Type="Int64" />
+          <Property Name="approved_date" Type="DateTime" Precision="3" />
+          <Property Name="cancelledby" Type="Int64" />
+          <Property Name="cancelled_date" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_holiday">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="holiday_name" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="is_active" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tbl_jobs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="company" Type="Int64" />
+          <Property Name="department" Type="Int64" />
+          <Property Name="name" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="is_active" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tbl_loan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="emp_id" Type="Int64" />
+          <Property Name="amount" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="effective_date" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="preparedby" Type="Int64" />
+          <Property Name="dateprepared" Type="DateTime" Precision="3" />
+          <Property Name="releasedby" Type="Int64" />
+          <Property Name="datereleased" Type="DateTime" Precision="3" />
+          <Property Name="voidby" Type="Int64" />
+          <Property Name="datevoid" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_schedule">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="time_in" Type="DateTime" Precision="3" />
+          <Property Name="time_out" Type="DateTime" Precision="3" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="grace_time" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_sss_contribution">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="start_range" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="end_range" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="monthly_salary_credit" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="social_security_er" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="social_security_ee" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="social_security_total" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ec_er" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="total_contribution_er" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="total_contribution_ee" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="grand_total_contribution" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="total_contribution" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="view_department_list">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="DepartmentID" Type="Int64" Nullable="false" />
+          <Property Name="DepartmentName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyID" Type="Int64" />
+          <Property Name="CompanyName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="View_Employee">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" />
+          <Property Name="firstname" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="middlename" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="lastname" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="is_active" Type="Boolean" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="company" Type="Int64" />
+          <Property Name="department" Type="Int64" />
+          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="birthdate" Type="DateTime" Precision="3" />
+          <Property Name="civil_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="usertype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CivilStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmployeeName" Type="String" MaxLength="602" FixedLength="false" Unicode="false" />
+          <Property Name="Company_Name" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Department_Name" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyId" Type="Int64" />
+          <Property Name="DeptId" Type="Int64" />
+          <Property Name="Employee_Status" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="schedule" Type="Int64" />
+          <Property Name="job_id" Type="Int64" />
+          <Property Name="JobName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="view_employee_list">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="Int64" Nullable="false" />
+          <Property Name="EmployeeName" Type="String" MaxLength="601" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="DepartmentName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Job" Type="Int64" />
+        </EntityType>
+        <EntityType Name="view_employee_list_v2">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="Int64" Nullable="false" />
+          <Property Name="EmployeeName" Type="String" MaxLength="601" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="DepartmentName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Job" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="view_employee_loan">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" />
+          <Property Name="emp_id" Type="Int64" />
+          <Property Name="amount" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="effective_date" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="preparedby" Type="Int64" />
+          <Property Name="dateprepared" Type="DateTime" Precision="3" />
+          <Property Name="releasedby" Type="Int64" />
+          <Property Name="datereleased" Type="DateTime" Precision="3" />
+          <Property Name="voidby" Type="Int64" />
+          <Property Name="datevoid" Type="DateTime" Precision="3" />
+          <Property Name="EmployeeName" Type="String" MaxLength="602" FixedLength="false" Unicode="false" />
+          <Property Name="PreparedByName" Type="String" MaxLength="602" FixedLength="false" Unicode="false" />
+          <Property Name="ReleasedByName" Type="String" MaxLength="602" FixedLength="false" Unicode="false" />
+          <Property Name="VoidByName" Type="String" MaxLength="602" FixedLength="false" Unicode="false" />
+          <Property Name="Company" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Department" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="view_employee_no_user_account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeName" Type="String" MaxLength="601" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="view_employee_timesheet_list">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" />
+          <Property Name="EmpName" Type="String" MaxLength="601" FixedLength="false" Unicode="false" />
+          <Property Name="company" Type="Int64" />
+          <Property Name="department" Type="Int64" />
+          <Property Name="timesheetID" Type="Int64" />
+          <Property Name="emp_id" Type="Int64" />
+          <Property Name="date_from" Type="DateTime" Precision="3" />
+          <Property Name="date_to" Type="DateTime" Precision="3" />
+          <Property Name="working_days" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="holidays" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="days_absent" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="duty_hours" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="lates" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="undertime" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="overtime" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="preparedby" Type="Int64" />
+          <Property Name="prepared_date" Type="DateTime" Precision="3" />
+          <Property Name="approvedby" Type="Int64" />
+          <Property Name="approved_date" Type="DateTime" Precision="3" />
+          <Property Name="cancelledby" Type="Int64" />
+          <Property Name="cancelled_date" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="view_job_list">
+          <Key>
+            <PropertyRef Name="JobID" />
+          </Key>
+          <Property Name="JobID" Type="Int64" Nullable="false" />
+          <Property Name="JobName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="DepartmentName" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="view_user_account_list">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="601" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="dbPayrollEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_account_type" EntityType="Self.tbl_account_type" />
+          <EntitySet Name="tbl_attendance" EntityType="Self.tbl_attendance" />
+          <EntitySet Name="tbl_company" EntityType="Self.tbl_company" />
+          <EntitySet Name="tbl_department" EntityType="Self.tbl_department" />
+          <EntitySet Name="tbl_dtr" EntityType="Self.tbl_dtr" />
+          <EntitySet Name="tbl_employee" EntityType="Self.tbl_employee" />
+          <EntitySet Name="tbl_employee_government" EntityType="Self.tbl_employee_government" />
+          <EntitySet Name="tbl_employee_rate" EntityType="Self.tbl_employee_rate" />
+          <EntitySet Name="tbl_employee_timesheet" EntityType="Self.tbl_employee_timesheet" />
+          <EntitySet Name="tbl_holiday" EntityType="Self.tbl_holiday" />
+          <EntitySet Name="tbl_jobs" EntityType="Self.tbl_jobs" />
+          <EntitySet Name="tbl_loan" EntityType="Self.tbl_loan" />
+          <EntitySet Name="tbl_schedule" EntityType="Self.tbl_schedule" />
+          <EntitySet Name="tbl_sss_contribution" EntityType="Self.tbl_sss_contribution" />
+          <EntitySet Name="view_department_list" EntityType="Self.view_department_list" />
+          <EntitySet Name="View_Employee" EntityType="Self.View_Employee" />
+          <EntitySet Name="view_employee_list" EntityType="Self.view_employee_list" />
+          <EntitySet Name="view_employee_list_v2" EntityType="Self.view_employee_list_v2" />
+          <EntitySet Name="view_employee_loan" EntityType="Self.view_employee_loan" />
+          <EntitySet Name="view_employee_no_user_account" EntityType="Self.view_employee_no_user_account" />
+          <EntitySet Name="view_employee_timesheet_list" EntityType="Self.view_employee_timesheet_list" />
+          <EntitySet Name="view_job_list" EntityType="Self.view_job_list" />
+          <EntitySet Name="view_user_account_list" EntityType="Self.view_user_account_list" />
+          <EntitySet Name="tbl_payslip_adjustment" EntityType="dbPayrollModel.tbl_payslip_adjustment" />
+          <EntitySet Name="tbl_payslip_government_dedution" EntityType="dbPayrollModel.tbl_payslip_government_dedution" />
+          <EntitySet Name="tbl_payslip_additionals" EntityType="dbPayrollModel.tbl_payslip_additionals" />
+          <EntitySet Name="tbl_payslip_deductions" EntityType="dbPayrollModel.tbl_payslip_deductions" />
+          <EntitySet Name="tbl_payslip_loan_deduction" EntityType="dbPayrollModel.tbl_payslip_loan_deduction" />
+          <EntitySet Name="tbl_payslip_less" EntityType="dbPayrollModel.tbl_payslip_less" />
+          <EntitySet Name="tbl_payslip_overtime" EntityType="dbPayrollModel.tbl_payslip_overtime" />
+          <EntitySet Name="tbl_payslip_holiday" EntityType="dbPayrollModel.tbl_payslip_holiday" />
+          <EntitySet Name="tbl_payslip_detail" EntityType="dbPayrollModel.tbl_payslip_detail" />
+          <EntitySet Name="tbl_employee_account" EntityType="dbPayrollModel.tbl_employee_account" />
+          <EntitySet Name="tbl_payslip" EntityType="dbPayrollModel.tbl_payslip" />
+        </EntityContainer>
+        <EntityType Name="tbl_payslip_adjustment">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="payslip_id" Type="Int64" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="amount" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="adjustment" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_payslip_government_dedution">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="payslip_id" Type="Int64" />
+          <Property Name="government" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="amount" Type="Decimal" Precision="18" Scale="4" />
+        </EntityType>
+        <EntityType Name="tbl_payslip_additionals">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="payslip_id" Type="Int64" />
+          <Property Name="name" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="amount" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="dateadded" Type="DateTime" Precision="0" />
+          <Property Name="addedby" Type="Int64" />
+        </EntityType>
+        <EntityType Name="tbl_payslip_deductions">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="payslip_id" Type="Int64" />
+          <Property Name="name" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+          <Property Name="amount" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="is_active" Type="Boolean" />
+          <Property Name="dateadded" Type="DateTime" Precision="0" />
+          <Property Name="addedby" Type="Int64" />
+        </EntityType>
+        <EntityType Name="tbl_payslip_loan_deduction">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="payslip_id" Type="Int64" />
+          <Property Name="amount" Type="Decimal" Precision="18" Scale="4" />
+        </EntityType>
+        <EntityType Name="tbl_payslip_less">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="payslip_id" Type="Int64" />
+          <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="amount" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="days" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="minutes" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="tbl_payslip_overtime">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="payslip_id" Type="Int64" />
+          <Property Name="amount" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="ot_date" Type="DateTime" Precision="0" />
+          <Property Name="ot_hours" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="tbl_payslip_holiday">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="payslip_id" Type="Int64" />
+          <Property Name="holiday_id" Type="Int64" />
+          <Property Name="holiday_date" Type="DateTime" Precision="0" />
+          <Property Name="amount" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="holiday_percent" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="tbl_payslip_detail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="payslip_id" Type="Int64" />
+          <Property Name="name" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="days" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="hours" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_employee_account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="emp_id" Type="Int64" />
+          <Property Name="usertype" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="username" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="question" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="is_active" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tbl_payslip">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="timesheet_id" Type="Int64" />
+          <Property Name="emp_id" Type="Int64" />
+          <Property Name="monthly_rate" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="semi_monthly_rate" Type="Decimal" Precision="18" Scale="4" />
+          <Property Name="preparedby" Type="Int64" />
+          <Property Name="dateprepared" Type="DateTime" Precision="3" />
+          <Property Name="approvedby" Type="Int64" />
+          <Property Name="dateapproved" Type="DateTime" Precision="3" />
+          <Property Name="cancelledby" Type="Int64" />
+          <Property Name="datecancelled" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="datefrom" Type="DateTime" Precision="0" />
+          <Property Name="dateto" Type="DateTime" Precision="0" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbPayrollModelStoreContainer" CdmEntityContainer="dbPayrollEntities">
+          <EntitySetMapping Name="tbl_account_type">
+            <EntityTypeMapping TypeName="dbPayrollModel.tbl_account_type">
+              <MappingFragment StoreEntitySet="tbl_account_type">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="type" ColumnName="type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_attendance">
+            <EntityTypeMapping TypeName="dbPayrollModel.tbl_attendance">
+              <MappingFragment StoreEntitySet="tbl_attendance">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="timein" ColumnName="timein" />
+                <ScalarProperty Name="timeout" ColumnName="timeout" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_company">
+            <EntityTypeMapping TypeName="dbPayrollModel.tbl_company">
+              <MappingFragment StoreEntitySet="tbl_company">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="is_active" ColumnName="is_active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_department">
+            <EntityTypeMapping TypeName="dbPayrollModel.tbl_department">
+              <MappingFragment StoreEntitySet="tbl_department">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="is_active" ColumnName="is_active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_dtr">
+            <EntityTypeMapping TypeName="dbPayrollModel.tbl_dtr">
+              <MappingFragment StoreEntitySet="tbl_dtr">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="check_in" ColumnName="check_in" />
+                <ScalarProperty Name="check_out" ColumnName="check_out" />
+                <ScalarProperty Name="total_duty_hours" ColumnName="total_duty_hours" />
+                <ScalarProperty Name="lates" ColumnName="lates" />
+                <ScalarProperty Name="undertime" ColumnName="undertime" />
+                <ScalarProperty Name="total_overtime" ColumnName="total_overtime" />
+                <ScalarProperty Name="ot_start" ColumnName="ot_start" />
+                <ScalarProperty Name="ot_end" ColumnName="ot_end" />
+                <ScalarProperty Name="ot_status" ColumnName="ot_status" />
+                <ScalarProperty Name="holiday_work_hours" ColumnName="holiday_work_hours" />
+                <ScalarProperty Name="holiday_work_status" ColumnName="holiday_work_status" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="isHoliday" ColumnName="isHoliday" />
+                <ScalarProperty Name="isRD" ColumnName="isRD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_employee">
+            <EntityTypeMapping TypeName="dbPayrollModel.tbl_employee">
+              <MappingFragment StoreEntitySet="tbl_employee">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                <ScalarProperty Name="middlename" ColumnName="middlename" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="department" ColumnName="department" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="job_id" ColumnName="job_id" />
+                <ScalarProperty Name="schedule" ColumnName="schedule" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+                <ScalarProperty Name="civil_status" ColumnName="civil_status" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="usertype" ColumnName="usertype" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="is_active" ColumnName="is_active" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_employee_government">
+            <EntityTypeMapping TypeName="dbPayrollModel.tbl_employee_government">
+              <MappingFragment StoreEntitySet="tbl_employee_government">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+                <ScalarProperty Name="has_sss" ColumnName="has_sss" />
+                <ScalarProperty Name="sss_number" ColumnName="sss_number" />
+                <ScalarProperty Name="has_philhealth" ColumnName="has_philhealth" />
+                <ScalarProperty Name="philhealth_number" ColumnName="philhealth_number" />
+                <ScalarProperty Name="has_pagibig" ColumnName="has_pagibig" />
+                <ScalarProperty Name="pagibig_number" ColumnName="pagibig_number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_employee_rate">
+            <EntityTypeMapping TypeName="dbPayrollModel.tbl_employee_rate">
+              <MappingFragment StoreEntitySet="tbl_employee_rate">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+                <ScalarProperty Name="rate" ColumnName="rate" />
+                <ScalarProperty Name="is_active" ColumnName="is_active" />
+                <ScalarProperty Name="effective_date" ColumnName="effective_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_employee_timesheet">
+            <EntityTypeMapping TypeName="dbPayrollModel.tbl_employee_timesheet">
+              <MappingFragment StoreEntitySet="tbl_employee_timesheet">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+                <ScalarProperty Name="date_from" ColumnName="date_from" />
+                <ScalarProperty Name="date_to" ColumnName="date_to" />
+                <ScalarProperty Name="working_days" ColumnName="working_days" />
+                <ScalarProperty Name="holidays" ColumnName="holidays" />
+                <ScalarProperty Name="days_absent" ColumnName="days_absent" />
+                <ScalarProperty Name="duty_hours" ColumnName="duty_hours" />
+                <ScalarProperty Name="lates" ColumnName="lates" />
+                <ScalarProperty Name="undertime" ColumnName="undertime" />
+                <ScalarProperty Name="overtime" ColumnName="overtime" />
+                <ScalarProperty Name="preparedby" ColumnName="preparedby" />
+                <ScalarProperty Name="prepared_date" ColumnName="prepared_date" />
+                <ScalarProperty Name="approvedby" ColumnName="approvedby" />
+                <ScalarProperty Name="approved_date" ColumnName="approved_date" />
+                <ScalarProperty Name="cancelledby" ColumnName="cancelledby" />
+                <ScalarProperty Name="cancelled_date" ColumnName="cancelled_date" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_holiday">
+            <EntityTypeMapping TypeName="dbPayrollModel.tbl_holiday">
+              <MappingFragment StoreEntitySet="tbl_holiday">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="holiday_name" ColumnName="holiday_name" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="is_active" ColumnName="is_active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_jobs">
+            <EntityTypeMapping TypeName="dbPayrollModel.tbl_jobs">
+              <MappingFragment StoreEntitySet="tbl_jobs">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="department" ColumnName="department" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="is_active" ColumnName="is_active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_loan">
+            <EntityTypeMapping TypeName="dbPayrollModel.tbl_loan">
+              <MappingFragment StoreEntitySet="tbl_loan">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="effective_date" ColumnName="effective_date" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="preparedby" ColumnName="preparedby" />
+                <ScalarProperty Name="dateprepared" ColumnName="dateprepared" />
+                <ScalarProperty Name="releasedby" ColumnName="releasedby" />
+                <ScalarProperty Name="datereleased" ColumnName="datereleased" />
+                <ScalarProperty Name="voidby" ColumnName="voidby" />
+                <ScalarProperty Name="datevoid" ColumnName="datevoid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_schedule">
+            <EntityTypeMapping TypeName="dbPayrollModel.tbl_schedule">
+              <MappingFragment StoreEntitySet="tbl_schedule">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="time_in" ColumnName="time_in" />
+                <ScalarProperty Name="time_out" ColumnName="time_out" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="grace_time" ColumnName="grace_time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_sss_contribution">
+            <EntityTypeMapping TypeName="dbPayrollModel.tbl_sss_contribution">
+              <MappingFragment StoreEntitySet="tbl_sss_contribution">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="start_range" ColumnName="start_range" />
+                <ScalarProperty Name="end_range" ColumnName="end_range" />
+                <ScalarProperty Name="monthly_salary_credit" ColumnName="monthly_salary_credit" />
+                <ScalarProperty Name="social_security_er" ColumnName="social_security_er" />
+                <ScalarProperty Name="social_security_ee" ColumnName="social_security_ee" />
+                <ScalarProperty Name="social_security_total" ColumnName="social_security_total" />
+                <ScalarProperty Name="ec_er" ColumnName="ec_er" />
+                <ScalarProperty Name="total_contribution_er" ColumnName="total_contribution_er" />
+                <ScalarProperty Name="total_contribution_ee" ColumnName="total_contribution_ee" />
+                <ScalarProperty Name="grand_total_contribution" ColumnName="grand_total_contribution" />
+                <ScalarProperty Name="total_contribution" ColumnName="total_contribution" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="view_department_list">
+            <EntityTypeMapping TypeName="dbPayrollModel.view_department_list">
+              <MappingFragment StoreEntitySet="view_department_list">
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="View_Employee">
+            <EntityTypeMapping TypeName="dbPayrollModel.View_Employee">
+              <MappingFragment StoreEntitySet="View_Employee">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                <ScalarProperty Name="middlename" ColumnName="middlename" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="is_active" ColumnName="is_active" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="department" ColumnName="department" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="birthdate" ColumnName="birthdate" />
+                <ScalarProperty Name="civil_status" ColumnName="civil_status" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="usertype" ColumnName="usertype" />
+                <ScalarProperty Name="CivilStatus" ColumnName="CivilStatus" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="Company_Name" ColumnName="Company Name" />
+                <ScalarProperty Name="Department_Name" ColumnName="Department Name" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="DeptId" ColumnName="DeptId" />
+                <ScalarProperty Name="Employee_Status" ColumnName="Employee Status" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="schedule" ColumnName="schedule" />
+                <ScalarProperty Name="job_id" ColumnName="job_id" />
+                <ScalarProperty Name="JobName" ColumnName="JobName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="view_employee_list">
+            <EntityTypeMapping TypeName="dbPayrollModel.view_employee_list">
+              <MappingFragment StoreEntitySet="view_employee_list">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="view_employee_list_v2">
+            <EntityTypeMapping TypeName="dbPayrollModel.view_employee_list_v2">
+              <MappingFragment StoreEntitySet="view_employee_list_v2">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="view_employee_loan">
+            <EntityTypeMapping TypeName="dbPayrollModel.view_employee_loan">
+              <MappingFragment StoreEntitySet="view_employee_loan">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="effective_date" ColumnName="effective_date" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="preparedby" ColumnName="preparedby" />
+                <ScalarProperty Name="dateprepared" ColumnName="dateprepared" />
+                <ScalarProperty Name="releasedby" ColumnName="releasedby" />
+                <ScalarProperty Name="datereleased" ColumnName="datereleased" />
+                <ScalarProperty Name="voidby" ColumnName="voidby" />
+                <ScalarProperty Name="datevoid" ColumnName="datevoid" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="PreparedByName" ColumnName="PreparedByName" />
+                <ScalarProperty Name="ReleasedByName" ColumnName="ReleasedByName" />
+                <ScalarProperty Name="VoidByName" ColumnName="VoidByName" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="view_employee_no_user_account">
+            <EntityTypeMapping TypeName="dbPayrollModel.view_employee_no_user_account">
+              <MappingFragment StoreEntitySet="view_employee_no_user_account">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="view_employee_timesheet_list">
+            <EntityTypeMapping TypeName="dbPayrollModel.view_employee_timesheet_list">
+              <MappingFragment StoreEntitySet="view_employee_timesheet_list">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+                <ScalarProperty Name="company" ColumnName="company" />
+                <ScalarProperty Name="department" ColumnName="department" />
+                <ScalarProperty Name="timesheetID" ColumnName="timesheetID" />
+                <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+                <ScalarProperty Name="date_from" ColumnName="date_from" />
+                <ScalarProperty Name="date_to" ColumnName="date_to" />
+                <ScalarProperty Name="working_days" ColumnName="working_days" />
+                <ScalarProperty Name="holidays" ColumnName="holidays" />
+                <ScalarProperty Name="days_absent" ColumnName="days_absent" />
+                <ScalarProperty Name="duty_hours" ColumnName="duty_hours" />
+                <ScalarProperty Name="lates" ColumnName="lates" />
+                <ScalarProperty Name="undertime" ColumnName="undertime" />
+                <ScalarProperty Name="overtime" ColumnName="overtime" />
+                <ScalarProperty Name="preparedby" ColumnName="preparedby" />
+                <ScalarProperty Name="prepared_date" ColumnName="prepared_date" />
+                <ScalarProperty Name="approvedby" ColumnName="approvedby" />
+                <ScalarProperty Name="approved_date" ColumnName="approved_date" />
+                <ScalarProperty Name="cancelledby" ColumnName="cancelledby" />
+                <ScalarProperty Name="cancelled_date" ColumnName="cancelled_date" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="view_job_list">
+            <EntityTypeMapping TypeName="dbPayrollModel.view_job_list">
+              <MappingFragment StoreEntitySet="view_job_list">
+                <ScalarProperty Name="JobID" ColumnName="JobID" />
+                <ScalarProperty Name="JobName" ColumnName="JobName" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="view_user_account_list">
+            <EntityTypeMapping TypeName="dbPayrollModel.view_user_account_list">
+              <MappingFragment StoreEntitySet="view_user_account_list">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_payslip_adjustment">
+            <EntityTypeMapping TypeName="dbPayrollModel.tbl_payslip_adjustment">
+              <MappingFragment StoreEntitySet="tbl_payslip_adjustment">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="adjustment" ColumnName="adjustment" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="payslip_id" ColumnName="payslip_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_payslip_government_dedution">
+            <EntityTypeMapping TypeName="dbPayrollModel.tbl_payslip_government_dedution">
+              <MappingFragment StoreEntitySet="tbl_payslip_government_dedution">
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="government" ColumnName="government" />
+                <ScalarProperty Name="payslip_id" ColumnName="payslip_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_payslip_additionals">
+            <EntityTypeMapping TypeName="dbPayrollModel.tbl_payslip_additionals">
+              <MappingFragment StoreEntitySet="tbl_payslip_additionals">
+                <ScalarProperty Name="addedby" ColumnName="addedby" />
+                <ScalarProperty Name="dateadded" ColumnName="dateadded" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="payslip_id" ColumnName="payslip_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_payslip_deductions">
+            <EntityTypeMapping TypeName="dbPayrollModel.tbl_payslip_deductions">
+              <MappingFragment StoreEntitySet="tbl_payslip_deductions">
+                <ScalarProperty Name="addedby" ColumnName="addedby" />
+                <ScalarProperty Name="dateadded" ColumnName="dateadded" />
+                <ScalarProperty Name="is_active" ColumnName="is_active" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="payslip_id" ColumnName="payslip_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_payslip_loan_deduction">
+            <EntityTypeMapping TypeName="dbPayrollModel.tbl_payslip_loan_deduction">
+              <MappingFragment StoreEntitySet="tbl_payslip_loan_deduction">
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="payslip_id" ColumnName="payslip_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_payslip_less">
+            <EntityTypeMapping TypeName="dbPayrollModel.tbl_payslip_less">
+              <MappingFragment StoreEntitySet="tbl_payslip_less">
+                <ScalarProperty Name="minutes" ColumnName="minutes" />
+                <ScalarProperty Name="days" ColumnName="days" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="payslip_id" ColumnName="payslip_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_payslip_overtime">
+            <EntityTypeMapping TypeName="dbPayrollModel.tbl_payslip_overtime">
+              <MappingFragment StoreEntitySet="tbl_payslip_overtime">
+                <ScalarProperty Name="ot_hours" ColumnName="ot_hours" />
+                <ScalarProperty Name="ot_date" ColumnName="ot_date" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="payslip_id" ColumnName="payslip_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_payslip_holiday">
+            <EntityTypeMapping TypeName="dbPayrollModel.tbl_payslip_holiday">
+              <MappingFragment StoreEntitySet="tbl_payslip_holiday">
+                <ScalarProperty Name="holiday_percent" ColumnName="holiday_percent" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="holiday_date" ColumnName="holiday_date" />
+                <ScalarProperty Name="holiday_id" ColumnName="holiday_id" />
+                <ScalarProperty Name="payslip_id" ColumnName="payslip_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_payslip_detail">
+            <EntityTypeMapping TypeName="dbPayrollModel.tbl_payslip_detail">
+              <MappingFragment StoreEntitySet="tbl_payslip_detail">
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="hours" ColumnName="hours" />
+                <ScalarProperty Name="days" ColumnName="days" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="payslip_id" ColumnName="payslip_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_employee_account">
+            <EntityTypeMapping TypeName="dbPayrollModel.tbl_employee_account">
+              <MappingFragment StoreEntitySet="tbl_employee_account">
+                <ScalarProperty Name="is_active" ColumnName="is_active" />
+                <ScalarProperty Name="answer" ColumnName="answer" />
+                <ScalarProperty Name="question" ColumnName="question" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="usertype" ColumnName="usertype" />
+                <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_payslip">
+            <EntityTypeMapping TypeName="dbPayrollModel.tbl_payslip">
+              <MappingFragment StoreEntitySet="tbl_payslip">
+                <ScalarProperty Name="dateto" ColumnName="dateto" />
+                <ScalarProperty Name="datefrom" ColumnName="datefrom" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="datecancelled" ColumnName="datecancelled" />
+                <ScalarProperty Name="cancelledby" ColumnName="cancelledby" />
+                <ScalarProperty Name="dateapproved" ColumnName="dateapproved" />
+                <ScalarProperty Name="approvedby" ColumnName="approvedby" />
+                <ScalarProperty Name="dateprepared" ColumnName="dateprepared" />
+                <ScalarProperty Name="preparedby" ColumnName="preparedby" />
+                <ScalarProperty Name="semi_monthly_rate" ColumnName="semi_monthly_rate" />
+                <ScalarProperty Name="monthly_rate" ColumnName="monthly_rate" />
+                <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+                <ScalarProperty Name="timesheet_id" ColumnName="timesheet_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,143 @@
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\bin\Debug\PayrollSystem.exe.config
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\bin\Debug\PayrollSystem.exe
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\bin\Debug\PayrollSystem.pdb
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.Properties.Resources.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.usercontrolLogIn.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolRegistration.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.exe
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.pdb
+C:\Users\Administrator\Desktop\PAYROLL SYSTEM\PayrollSystem\PayrollSystem\bin\Debug\PayrollSystem.exe.config
+C:\Users\Administrator\Desktop\PAYROLL SYSTEM\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.exe
+C:\Users\Administrator\Desktop\PAYROLL SYSTEM\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.pdb
+C:\Users\Administrator\Desktop\PAYROLL SYSTEM\PayrollSystem\PayrollSystem\bin\Debug\PayrollSystem.exe
+C:\Users\Administrator\Desktop\PAYROLL SYSTEM\PayrollSystem\PayrollSystem\bin\Debug\PayrollSystem.pdb
+C:\Users\Administrator\Desktop\PAYROLL SYSTEM\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.Properties.Resources.resources
+C:\Users\Administrator\Desktop\PAYROLL SYSTEM\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.usercontrolLogIn.resources
+C:\Users\Administrator\Desktop\PAYROLL SYSTEM\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolRegistration.resources
+C:\Users\Administrator\Desktop\PAYROLL SYSTEM\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\PAYROLL SYSTEM\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolMain.resources
+C:\Users\Administrator\Desktop\PAYROLL SYSTEM\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\PAYROLL SYSTEM\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolEmployeeList.resources
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\bin\Debug\PayrollSystem.exe.config
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\bin\Debug\PayrollSystem.exe
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\bin\Debug\PayrollSystem.pdb
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\bin\Debug\MetroFramework.Design.dll
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\bin\Debug\MetroFramework.dll
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolDTR.resources
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolEntryDTR.resources
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolGovernment.resources
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolGovernmentContribution.resources
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolGovernmentGuidelines.resources
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolHoliday.resources
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolPayroll.resources
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolSchedule.resources
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolSeedFund.resources
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolTimeSheet.resources
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.Form1.resources
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.Properties.Resources.resources
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.Loginnew.resources
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolAddUser.resources
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolAttendance.resources
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolCompany.resources
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolDepartment.resources
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolEditEmployee.resources
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolEmployeeList.resources
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolJob.resources
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.usercontrolLogIn.resources
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolMain.resources
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolPayrollSection.resources
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolRegistration.resources
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.exe
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.pdb
+C:\Users\Administrator\Desktop\Payroll\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolPayslipDetail.resources
+C:\Users\Administrator\Desktop\Payroll System\PayrollSystem\PayrollSystem\bin\Debug\MetroFramework.Design.dll
+C:\Users\Administrator\Desktop\Payroll System\PayrollSystem\PayrollSystem\bin\Debug\MetroFramework.dll
+C:\Users\Administrator\Desktop\Payroll System\PayrollSystem\PayrollSystem\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Administrator\Desktop\Payroll System\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolDTR.resources
+C:\Users\Administrator\Desktop\Payroll System\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolEntryDTR.resources
+C:\Users\Administrator\Desktop\Payroll System\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolGovernment.resources
+C:\Users\Administrator\Desktop\Payroll System\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolGovernmentContribution.resources
+C:\Users\Administrator\Desktop\Payroll System\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolGovernmentGuidelines.resources
+C:\Users\Administrator\Desktop\Payroll System\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolHoliday.resources
+C:\Users\Administrator\Desktop\Payroll System\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolPayroll.resources
+C:\Users\Administrator\Desktop\Payroll System\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolPayslipDetail.resources
+C:\Users\Administrator\Desktop\Payroll System\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolSchedule.resources
+C:\Users\Administrator\Desktop\Payroll System\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolSeedFund.resources
+C:\Users\Administrator\Desktop\Payroll System\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolTimeSheet.resources
+C:\Users\Administrator\Desktop\Payroll System\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.Form1.resources
+C:\Users\Administrator\Desktop\Payroll System\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.Loginnew.resources
+C:\Users\Administrator\Desktop\Payroll System\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolAddUser.resources
+C:\Users\Administrator\Desktop\Payroll System\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolAttendance.resources
+C:\Users\Administrator\Desktop\Payroll System\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolCompany.resources
+C:\Users\Administrator\Desktop\Payroll System\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolDepartment.resources
+C:\Users\Administrator\Desktop\Payroll System\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolEditEmployee.resources
+C:\Users\Administrator\Desktop\Payroll System\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolJob.resources
+C:\Users\Administrator\Desktop\Payroll System\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolPayrollSection.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\bin\Debug\PayrollSystem.exe.config
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.exe
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.pdb
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\bin\Debug\PayrollSystem.exe
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\bin\Debug\PayrollSystem.pdb
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\bin\Debug\MetroFramework.Design.dll
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\bin\Debug\MetroFramework.dll
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolDTR.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolEntryDTR.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolGovernment.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolGovernmentContribution.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolGovernmentGuidelines.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolHoliday.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolPayroll.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolPayslipDetail.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolSchedule.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolSeedFund.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolTimeSheet.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.Form1.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.Properties.Resources.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.Loginnew.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolAddUser.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolAttendance.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolCompany.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolDepartment.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolEditEmployee.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolEmployeeList.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolJob.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.usercontrolLogIn.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolMain.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolPayrollSection.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolRegistration.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.csproj.GenerateResource.Cache
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolCompanyDepartmentJob.resources
+C:\Users\actda\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\bin\Debug\MetroFramework.Design.dll
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\bin\Debug\MetroFramework.dll
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolCompanyDepartmentJob.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolDTR.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolEntryDTR.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolGovernment.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolGovernmentContribution.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolGovernmentGuidelines.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolHoliday.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolPayroll.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolPayslipDetail.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolSchedule.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolSeedFund.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolTimeSheet.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.Form1.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.Loginnew.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolAddUser.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolAttendance.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolCompany.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolDepartment.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolEditEmployee.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolEmployeeList.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolJob.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolMain.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolPayrollSection.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.UserControls.usercontrolForgotPassword.resources
+C:\Users\Administrator\Desktop\PayrollSystem\PayrollSystem\obj\Debug\PayrollSystem.csprojResolveAssemblyReference.cache

@@ -1,0 +1,527 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3B59F810-F496-44CF-B4AA-00D12CE9F4BB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PayrollSystem</RootNamespace>
+    <AssemblyName>PayrollSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Winform.Metroframework.1.4.0\lib\net20\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\packages\Winform.Metroframework.Design.1.4.0\lib\net20\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Account\AccountModel.cs" />
+    <Compile Include="Model\Account\AccountType.cs" />
+    <Compile Include="Model\Company\CompanyModel.cs" />
+    <Compile Include="Model\dbEntity\dbPayrollEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbPayrollEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\dbPayrollEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\dbPayrollEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbPayrollEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\tbl_account_type.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\tbl_attendance.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\tbl_company.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\tbl_department.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\tbl_dtr.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\tbl_employee.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\tbl_employee_account.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\tbl_employee_government.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\tbl_employee_rate.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\tbl_employee_timesheet.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\tbl_holiday.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\tbl_jobs.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\tbl_loan.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\tbl_payslip.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\tbl_payslip_additionals.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\tbl_payslip_adjustment.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\tbl_payslip_deductions.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\tbl_payslip_detail.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\tbl_payslip_government_dedution.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\tbl_payslip_holiday.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\tbl_payslip_less.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\tbl_payslip_loan_deduction.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\tbl_payslip_overtime.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\tbl_schedule.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\tbl_sss_contribution.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\view_department_list.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\View_Employee.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\view_employee_list.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\view_employee_list_v2.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\view_employee_loan.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\view_employee_no_user_account.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\view_employee_timesheet_list.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\view_job_list.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dbEntity\view_user_account_list.cs">
+      <DependentUpon>dbPayrollEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Deduction\GovernmentDeductionModel.cs" />
+    <Compile Include="Model\Deduction\SeedFundDeduction.cs" />
+    <Compile Include="Model\Department\DepartmentModel.cs" />
+    <Compile Include="Model\DTR\DTRModel.cs" />
+    <Compile Include="Model\Employee\EmployeeAccountModel.cs" />
+    <Compile Include="Model\Employee\EmployeeModel.cs" />
+    <Compile Include="Model\Employee\EmployeeRateModel.cs" />
+    <Compile Include="Model\Employee\employee_accountModel.cs" />
+    <Compile Include="Model\Extension\Extension.cs" />
+    <Compile Include="Model\Government\GovernmentModel.cs" />
+    <Compile Include="Model\Government\SSSModel.cs" />
+    <Compile Include="Model\Helper\GlobalControls.cs" />
+    <Compile Include="Model\Helper\GlobalVariable.cs" />
+    <Compile Include="Model\Holiday\HolidayModel.cs" />
+    <Compile Include="Model\Job\JobModel.cs" />
+    <Compile Include="Model\Payslip\PayslipAdditionalsModel.cs" />
+    <Compile Include="Model\Payslip\PayslipAdjustmentModel.cs" />
+    <Compile Include="Model\Payslip\PayslipDetailModel.cs" />
+    <Compile Include="Model\Payslip\PayslipGovernmentDeductionModel.cs" />
+    <Compile Include="Model\Payslip\PayslipHolidayModel.cs" />
+    <Compile Include="Model\Payslip\PayslipLessModel.cs" />
+    <Compile Include="Model\Payslip\PayslipLoanDeductionModel.cs" />
+    <Compile Include="Model\Payslip\PayslipModel.cs" />
+    <Compile Include="Model\Payslip\PayslipOvertimeModel.cs" />
+    <Compile Include="Model\Schedule\ScheduleModel.cs" />
+    <Compile Include="Model\Security\DataSecurity.cs" />
+    <Compile Include="Model\Session\SessionModel.cs" />
+    <Compile Include="Model\TimeSheet\TimeSheetModel.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\Loginnew.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Loginnew.Designer.cs">
+      <DependentUpon>Loginnew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usercontrolAddUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usercontrolAddUser.Designer.cs">
+      <DependentUpon>usercontrolAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usercontrolAttendance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usercontrolAttendance.Designer.cs">
+      <DependentUpon>usercontrolAttendance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usercontrolCompany.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usercontrolCompany.Designer.cs">
+      <DependentUpon>usercontrolCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usercontrolCompanyDepartmentJob.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usercontrolCompanyDepartmentJob.Designer.cs">
+      <DependentUpon>usercontrolCompanyDepartmentJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usercontrolDepartment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usercontrolDepartment.Designer.cs">
+      <DependentUpon>usercontrolDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usercontrolDTR.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usercontrolDTR.Designer.cs">
+      <DependentUpon>usercontrolDTR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usercontrolEditEmployee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usercontrolEditEmployee.Designer.cs">
+      <DependentUpon>usercontrolEditEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usercontrolEmployeeList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usercontrolEmployeeList.Designer.cs">
+      <DependentUpon>usercontrolEmployeeList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usercontrolEntryDTR.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usercontrolEntryDTR.Designer.cs">
+      <DependentUpon>usercontrolEntryDTR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usercontrolForgotPassword.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usercontrolForgotPassword.Designer.cs">
+      <DependentUpon>usercontrolForgotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usercontrolGovernment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usercontrolGovernment.Designer.cs">
+      <DependentUpon>usercontrolGovernment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usercontrolGovernmentContribution.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usercontrolGovernmentContribution.Designer.cs">
+      <DependentUpon>usercontrolGovernmentContribution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usercontrolGovernmentGuidelines.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usercontrolGovernmentGuidelines.Designer.cs">
+      <DependentUpon>usercontrolGovernmentGuidelines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usercontrolHoliday.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usercontrolHoliday.Designer.cs">
+      <DependentUpon>usercontrolHoliday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usercontrolJob.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usercontrolJob.Designer.cs">
+      <DependentUpon>usercontrolJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usercontrolLogIn.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usercontrolLogIn.Designer.cs">
+      <DependentUpon>usercontrolLogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usercontrolMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usercontrolMain.Designer.cs">
+      <DependentUpon>usercontrolMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usercontrolPayroll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usercontrolPayroll.Designer.cs">
+      <DependentUpon>usercontrolPayroll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usercontrolPayrollSection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usercontrolPayrollSection.Designer.cs">
+      <DependentUpon>usercontrolPayrollSection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usercontrolPayslipDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usercontrolPayslipDetail.Designer.cs">
+      <DependentUpon>usercontrolPayslipDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usercontrolRegistration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usercontrolRegistration.Designer.cs">
+      <DependentUpon>usercontrolRegistration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usercontrolSchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usercontrolSchedule.Designer.cs">
+      <DependentUpon>usercontrolSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usercontrolSeedFund.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usercontrolSeedFund.Designer.cs">
+      <DependentUpon>usercontrolSeedFund.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\usercontrolTimeSheet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\usercontrolTimeSheet.Designer.cs">
+      <DependentUpon>usercontrolTimeSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinFormClass\SettingController.cs" />
+    <Compile Include="WinFormClass\SettingUserControl.cs" />
+    <Compile Include="WinFormClass\SettingWinForm.cs" />
+    <EmbeddedResource Include="UserControls\usercontrolCompanyDepartmentJob.resx">
+      <DependentUpon>usercontrolCompanyDepartmentJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usercontrolDTR.resx">
+      <DependentUpon>usercontrolDTR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usercontrolEntryDTR.resx">
+      <DependentUpon>usercontrolEntryDTR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usercontrolForgotPassword.resx">
+      <DependentUpon>usercontrolForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usercontrolGovernment.resx">
+      <DependentUpon>usercontrolGovernment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usercontrolGovernmentContribution.resx">
+      <DependentUpon>usercontrolGovernmentContribution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usercontrolGovernmentGuidelines.resx">
+      <DependentUpon>usercontrolGovernmentGuidelines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usercontrolHoliday.resx">
+      <DependentUpon>usercontrolHoliday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usercontrolPayroll.resx">
+      <DependentUpon>usercontrolPayroll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usercontrolPayslipDetail.resx">
+      <DependentUpon>usercontrolPayslipDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usercontrolSchedule.resx">
+      <DependentUpon>usercontrolSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usercontrolSeedFund.resx">
+      <DependentUpon>usercontrolSeedFund.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usercontrolTimeSheet.resx">
+      <DependentUpon>usercontrolTimeSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="bin\Debug\PayrollSystem.exe.config" />
+    <None Include="bin\Debug\PayrollSystem.vshost.exe.config" />
+    <None Include="bin\Debug\PayrollSystem.vshost.exe.manifest" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UserControls\Loginnew.resx">
+      <DependentUpon>Loginnew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usercontrolAddUser.resx">
+      <DependentUpon>usercontrolAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usercontrolAttendance.resx">
+      <DependentUpon>usercontrolAttendance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usercontrolCompany.resx">
+      <DependentUpon>usercontrolCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usercontrolDepartment.resx">
+      <DependentUpon>usercontrolDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usercontrolEditEmployee.resx">
+      <DependentUpon>usercontrolEditEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usercontrolEmployeeList.resx">
+      <DependentUpon>usercontrolEmployeeList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usercontrolJob.resx">
+      <DependentUpon>usercontrolJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usercontrolLogIn.resx">
+      <DependentUpon>usercontrolLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usercontrolMain.resx">
+      <DependentUpon>usercontrolMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usercontrolPayrollSection.resx">
+      <DependentUpon>usercontrolPayrollSection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\usercontrolRegistration.resx">
+      <DependentUpon>usercontrolRegistration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model\dbEntity\dbPayrollEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>dbPayrollEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\dbEntity\dbPayrollEntities.edmx.diagram">
+      <DependentUpon>dbPayrollEntities.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\EntityFramework.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Debug\EntityFramework.SqlServer.xml" />
+    <Content Include="bin\Debug\EntityFramework.xml" />
+    <Content Include="bin\Debug\PayrollSystem.exe" />
+    <Content Include="bin\Debug\PayrollSystem.pdb" />
+    <Content Include="bin\Debug\PayrollSystem.vshost.exe" />
+    <Content Include="Content\printContent.html" />
+    <Content Include="Design\logo.png" />
+    <Content Include="MetroFramework.txt" />
+    <Content Include="Model\dbEntity\dbPayrollEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbPayrollEntities.edmx</DependentUpon>
+      <LastGenOutput>dbPayrollEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\dbEntity\dbPayrollEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbPayrollEntities.edmx</DependentUpon>
+      <LastGenOutput>dbPayrollEntities.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="DataSource\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

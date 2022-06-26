@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="433e365baa574ec0b00065b05f82683b" Name="Diagram1" ZoomLevel="90">
+        <EntityTypeShape EntityType="dbPayrollModel.tbl_account_type" Width="1.5" PointX="0.5" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.tbl_attendance" Width="1.5" PointX="2.125" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.tbl_company" Width="1.5" PointX="10.25" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.tbl_department" Width="1.5" PointX="11.875" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.tbl_dtr" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.tbl_employee" Width="1.5" PointX="5.375" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.tbl_employee_government" Width="1.5" PointX="0.5" PointY="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.tbl_employee_rate" Width="1.5" PointX="3.75" PointY="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.tbl_employee_timesheet" Width="1.5" PointX="2.125" PointY="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.tbl_holiday" Width="1.5" PointX="7" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.tbl_jobs" Width="1.5" PointX="13.5" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.tbl_loan" Width="1.5" PointX="5.375" PointY="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.tbl_schedule" Width="1.5" PointX="7" PointY="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.tbl_sss_contribution" Width="1.5" PointX="8.625" PointY="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.view_department_list" Width="1.5" PointX="5.375" PointY="6" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.View_Employee" Width="1.5" PointX="8.625" PointY="6" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.view_employee_list" Width="1.5" PointX="11.875" PointY="6" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.view_employee_list_v2" Width="1.5" PointX="13.5" PointY="6" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.view_employee_loan" Width="1.5" PointX="2.125" PointY="6" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.view_employee_no_user_account" Width="1.5" PointX="7" PointY="6" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.view_employee_timesheet_list" Width="1.5" PointX="10.25" PointY="6" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.view_job_list" Width="1.5" PointX="3.75" PointY="6" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.view_user_account_list" Width="1.5" PointX="0.5" PointY="6" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.tbl_payslip_adjustment" Width="1.5" PointX="10.25" PointY="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.tbl_payslip_government_dedution" Width="1.5" PointX="11.875" PointY="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.tbl_payslip_additionals" Width="1.5" PointX="13.5" PointY="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.tbl_payslip_deductions" Width="1.5" PointX="15.125" PointY="1.5" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.tbl_payslip_loan_deduction" Width="1.5" PointX="0.5" PointY="2.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.tbl_payslip_less" Width="1.5" PointX="2.125" PointY="2.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.tbl_payslip_overtime" Width="1.5" PointX="5.375" PointY="2.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.tbl_payslip_holiday" Width="1.5" PointX="3.75" PointY="2.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.tbl_payslip_detail" Width="1.5" PointX="7" PointY="2.25" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.tbl_employee_account" Width="1.5" PointX="15.125" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="dbPayrollModel.tbl_payslip" Width="1.5" PointX="8.625" PointY="0.75" IsExpanded="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
